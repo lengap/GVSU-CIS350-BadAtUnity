@@ -1,13 +1,12 @@
 # Team Name
+Our project is to make a 2D dungeon crawler game in unity. Using sprites from unity's asset store as the player model.
 
-Project description (~1 paragraph)
 
 ## Team Members and Roles
 
-* Member 1 (Role 1, Role 2)
-* Member 2 (Role 3, Role 4)
-* Member 3 (Role 5, Role 6)
-
+* Patrick Lenga (Role 1, Role 2)
+* Hunter Chopp (Role 3, Role 4)
+* Matthew Squire (Role 5, Role 6)
 ## Prerequisites
 
 ## Run Instructions
