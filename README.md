@@ -1,4 +1,4 @@
-# Team Name
+# Bad At Unity 
 Our project is to make a 2D dungeon crawler game in unity. Using sprites from unity's asset store as the player model.
 
 
