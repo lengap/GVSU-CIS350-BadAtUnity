@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639090768}
   - component: {fileID: 639090767}
+  - component: {fileID: 639090769}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -286,6 +287,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639090769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639090766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2519a6c970d13ea449eed23b5ddbddc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &725203587
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 725203588}
   - component: {fileID: 725203589}
+  - component: {fileID: 725203590}
   m_Layer: 0
   m_Name: player-idle-1
   m_TagString: Untagged
@@ -367,3 +381,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &725203590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725203587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2519a6c970d13ea449eed23b5ddbddc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
