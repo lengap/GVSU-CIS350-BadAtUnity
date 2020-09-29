@@ -7,7 +7,7 @@ We will instead place the character in a more modern setting to better connect w
 
 * [Patrick Lenga](https://github.com/lengap/CIS350-HW2-Lenga) (Programmer, Tester)
 * [Hunter Chopp](https://github.com/chopph/CIS350-HW2--Chopp-) (Programmer, Designer)
-* Team Member 3 (Role 5, Role 6)
+* [Matthew Squire](https://github.com/mattsq18/CIS350-HW2-Squire) (Programmer, Tester)
 ## Prerequisites
 
-## Run Instructions
+## Run Instructio
