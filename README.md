@@ -10,4 +10,4 @@ We will instead place the character in a more modern setting to better connect w
 * [Matthew Squire](https://github.com/mattsq18/CIS350-HW2-Squire) (Programmer, Tester)
 ## Prerequisites
 
-## Run Instructio
+## Run Instructions
