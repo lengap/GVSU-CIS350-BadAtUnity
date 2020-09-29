@@ -6,7 +6,7 @@ We will instead place the character in a more modern setting to better connect w
 ## Team Members and Roles
 
 * [Patrick Lenga](https://github.com/lengap/CIS350-HW2-Lenga) (Programmer, Tester)
-* [Hunter Chopp] (https://github.com/chopph/CIS350-HW2--Chopp-)(Programmer, Designer)
+* [Hunter Chopp](https://github.com/chopph/CIS350-HW2--Chopp-) (Programmer, Designer)
 * Team Member 3 (Role 5, Role 6)
 ## Prerequisites
 
