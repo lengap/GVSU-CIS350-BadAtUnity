@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    bool facingRight = true;
     float speed = 3.0f;
     private float horizontal;
     private float vertical;
@@ -21,6 +22,22 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
+        if (horizontal > 0 && !facingRight)
+        {
+            Flip();
+        }
+
+        else if (horizontal < 0 && facingRight)
+        {
+            Flip();
+        }
+
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }
