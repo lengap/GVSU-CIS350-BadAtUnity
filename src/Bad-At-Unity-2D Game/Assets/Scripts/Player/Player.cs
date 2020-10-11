@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    //variables
+    public int respawn;
+    public int health = 100;
+    private int maxHealth = 100;
     bool facingRight = true;
     float speed = 3.0f;
     private float horizontal;
@@ -39,5 +44,22 @@ public class PlayerMovement : MonoBehaviour
     {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        //add death animation
+        Destroy(gameObject);
+        SceneManager.LoadScene(respawn);
     }
 }
