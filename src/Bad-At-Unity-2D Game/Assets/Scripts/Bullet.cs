@@ -13,4 +13,14 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.right * speed;
     }
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        EnemyAI enemy = hitInfo.GetComponent<EnemyAI>();
+        if(enemy != null)
+        {
+            enemy.TakeDamage(50);
+        }
+        Destroy(gameObject);
+    }
 }

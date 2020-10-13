@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject projectile;
 
+    public int health = 100;
 
 
     // Start is called before the first frame update
@@ -54,5 +55,21 @@ public class EnemyAI : MonoBehaviour
 
 
 
+    }
+
+    public void TakeDamage( int damage)
+    {
+        health -= damage;
+
+        if(health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        //add death animation
+        Destroy(gameObject);
     }
 }
