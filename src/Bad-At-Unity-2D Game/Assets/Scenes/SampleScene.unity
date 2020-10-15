@@ -1929,6 +1929,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 639090768}
+    - target: {fileID: 1297160699926294172, guid: e94a90ed531b2dc49975325e0a4737b9,
+        type: 3}
+      propertyPath: isRunning
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297160700382729329, guid: e94a90ed531b2dc49975325e0a4737b9,
+        type: 3}
+      propertyPath: m_Name
+      value: GogGFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297160700382729331, guid: e94a90ed531b2dc49975325e0a4737b9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d15f98a9e4bc9e49b1495a32ba35368,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
 --- !u!1 &1297160700004155442 stripped
