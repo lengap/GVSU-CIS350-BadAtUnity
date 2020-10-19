@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * (Time.deltaTime/10));
 
         if (transform.position.x == target.x && transform.position.y == target.y) {
             DestroyProjectile();

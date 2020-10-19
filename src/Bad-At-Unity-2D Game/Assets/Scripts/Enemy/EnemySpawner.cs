@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public float playerDistance;
     public int health = 100;
     public Transform player;
-    private float spawnPos;
+    public Transform SpawnPoint;
     public GameObject EnemyType;
     private float timeBtwSpawns;
     public float startTimeBtwSpawns;
@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if ((Vector2.Distance(transform.position, player.position) <= playerDistance ) && timeBtwSpawns <= 0)
         {
-            Instantiate(EnemyType, transform.position, Quaternion.identity);
+            Instantiate(EnemyType, SpawnPoint.position, Quaternion.identity);
             timeBtwSpawns = startTimeBtwSpawns;
         }
         else {

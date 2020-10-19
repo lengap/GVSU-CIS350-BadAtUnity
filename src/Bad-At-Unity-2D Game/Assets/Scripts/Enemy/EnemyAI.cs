@@ -10,11 +10,11 @@ public class EnemyAI : MonoBehaviour
     public float stopDist;
     public float retreatDist;
 
-    public Transform player;
-    public bool isRunning = false;
+    private Transform player;
 
     private float timeBtwShots;
     public float startTimeBtwShots;
+    public Transform FirePoint;
 
     public GameObject projectile;
 
@@ -34,12 +34,10 @@ public class EnemyAI : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            isRunning = true;
         }
         else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
         {
             transform.position = this.transform.position;
-            isRunning = true;
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDist) {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
@@ -48,7 +46,7 @@ public class EnemyAI : MonoBehaviour
         if (timeBtwShots <= 0)
         {
 
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            Instantiate(projectile, FirePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
 
         }

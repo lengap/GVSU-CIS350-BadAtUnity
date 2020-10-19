@@ -27,10 +27,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297160699926294168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.01, y: 1.37, z: -1}
+  m_LocalPosition: {x: 3.01, y: 1.37, z: -2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1297160700382729328}
+  - {fileID: 6028735832534222156}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,10 +50,11 @@ MonoBehaviour:
   speed: 1
   stopDist: 2.5
   retreatDist: 1
-  player: {fileID: 0}
   startTimeBtwShots: 3
+  FirePoint: {fileID: 6028735832534222156}
   projectile: {fileID: 1222976286999306774, guid: bdf343aacff95f145985fcbe38093e50,
     type: 3}
+  health: 100
 --- !u!61 &1297160699926294174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1297160700382729328}
   - component: {fileID: 1297160700382729331}
-  - component: {fileID: 1297160700382729330}
   m_Layer: 0
   m_Name: BaldGFX
   m_TagString: Untagged
@@ -126,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297160700382729329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1297160699926294170}
@@ -182,16 +183,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1297160700382729330
-MonoBehaviour:
+--- !u!1 &1832822946379643385
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297160700382729329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfc0a4e9f6fd77147a95a3b68093f21b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiPath: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6028735832534222156}
+  m_Layer: 0
+  m_Name: EnemyFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6028735832534222156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832822946379643385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.084, y: -0.024, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1297160699926294170}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
