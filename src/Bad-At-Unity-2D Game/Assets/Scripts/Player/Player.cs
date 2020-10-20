@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public Animator animator;
     //variables
     public int respawn;
     public int health = 100;
@@ -26,7 +27,16 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+	animator.SetBool("Hurt", false);
 
+	/* if (Input.GetButtonDown("Crouch"))
+	{
+	    animator.SetBool("Crouching", true);
+	} else if (Input.GetButtonUp("Crouch")) 
+	{
+	    animator.SetBool("Crouching", false;
+	} */
         if (horizontal > 0 && !facingRight)
         {
             Flip();
@@ -49,7 +59,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
+	animator.SetBool("Hurt", true);
         if (health <= 0)
         {
             Die();
