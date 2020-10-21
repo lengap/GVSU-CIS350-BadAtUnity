@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public HealthBar healthBar;
     public Animator animator;
     //variables
     public int respawn;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
 	animator.SetBool("Hurt", true);
         if (health <= 0)
         {
