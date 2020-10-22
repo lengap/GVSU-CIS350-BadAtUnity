@@ -1,5 +1,5 @@
-#Bad at Unity Project Tasks
-###Members: Patrick Lenga, Hunter Chopp, Matthew Squire
+# Bad at Unity Project Tasks
+### Members: Patrick Lenga, Hunter Chopp, Matthew Squire
 
 ##Completed Tasks:
 ### Player Movement
@@ -19,7 +19,7 @@
 * Expected Time To Complete: 4 Days
 * Responsible Persons: Patrick Lenga
 
-##In Progress Tasks:
+## In Progress Tasks:
 ### Procedural Level Design:
 * Description: When the game is played a map with be randomly generated based on the parameters given (ex. size, total distance to finish, etc.)
 * Expected Time To Complete: 5 Days.
