@@ -1,7 +1,7 @@
 # Bad at Unity Project Tasks
 ### Members: Patrick Lenga, Hunter Chopp, Matthew Squire
 
-##Completed Tasks:
+## Completed Tasks:
 ### Player Movement
 * Description: Allowing the user to press the WASD to move the player around the map.
 * Expected Time to Complete: 1 Day.
