@@ -30,6 +30,10 @@ public class Test : MonoBehaviour
     private int maxRouteLength;
     [SerializeField]
     private int maxRoutes = 20;
+	public GameObject spawner;
+	public int maxSpnr;
+	private int spnrCount;
+	private bool isRoom;
     
 
     private int routeCount = 0;
@@ -39,6 +43,8 @@ public class Test : MonoBehaviour
         int x = 0;
         int y = 0;
         int routeLength = 0;
+		isRoom = false;
+		spnrCount = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -91,6 +97,7 @@ public class Test : MonoBehaviour
                 int roomSize = 1; //Hallway size
                 if (Random.Range(1, 100) <= roomRate)
                     roomSize = Random.Range(3, 6);
+					isRoom = true;
                 previousPos = new Vector2Int(x, y);
 
                 //Go Straight
@@ -100,12 +107,14 @@ public class Test : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + xOffset, previousPos.y + yOffset, roomSize);
                         NewRoute(previousPos.x + xOffset, previousPos.y + yOffset, Random.Range(routeLength, maxRouteLength), previousPos);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                     }
                     else
                     {
                         x = previousPos.x + xOffset;
                         y = previousPos.y + yOffset;
                         GenerateSquare(x, y, roomSize);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                         routeUsed = true;
                     }
                 }
@@ -117,12 +126,14 @@ public class Test : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x - yOffset, previousPos.y + xOffset, roomSize);
                         NewRoute(previousPos.x - yOffset, previousPos.y + xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                     }
                     else
                     {
                         y = previousPos.y + xOffset;
                         x = previousPos.x - yOffset;
                         GenerateSquare(x, y, roomSize);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                         routeUsed = true;
                     }
                 }
@@ -133,12 +144,14 @@ public class Test : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + yOffset, previousPos.y - xOffset, roomSize);
                         NewRoute(previousPos.x + yOffset, previousPos.y - xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                     }
                     else
                     {
                         y = previousPos.y - xOffset;
                         x = previousPos.x + yOffset;
                         GenerateSquare(x, y, roomSize);
+						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                         routeUsed = true;
                     }
                 }
@@ -164,4 +177,13 @@ public class Test : MonoBehaviour
             }
         }
     }
+	private void GenerateSpawner(int x, int y, bool room){
+		Vector3Int pos = new Vector3Int(x, y, 0);
+		if(isRoom && (spnrCount != maxSpnr)){
+			Instantiate(spawner, pos, Quaternion.identity);
+			spnrCount++;
+		}
+		
+		
+	}
 }
