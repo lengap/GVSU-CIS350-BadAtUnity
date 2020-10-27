@@ -62,11 +62,16 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         healthBar.SetHealth(health);
-	animator.SetBool("Hurt", true);
+		animator.SetBool("Hurt", true);
         if (health <= 0)
         {
             Die();
         }
+    }
+	public void HealDamage(int damage)
+    {
+        health += damage;
+        healthBar.SetHealth(health);
     }
 
     void Die()

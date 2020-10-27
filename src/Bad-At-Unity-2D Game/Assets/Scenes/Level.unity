@@ -611,7 +611,7 @@ MonoBehaviour:
   maxRouteLength: 200
   maxRoutes: 20
   spawner: {fileID: 8350173349360789797, guid: c555acd562f66614c84cf0fb640fab7a, type: 3}
-  maxSpnr: 15
+  maxSpnr: 30
   maxItems: 15
   items:
   - {fileID: 1207951520718608252, guid: 1bb1eb155d7c4104f80e92ad17f0723e, type: 3}
