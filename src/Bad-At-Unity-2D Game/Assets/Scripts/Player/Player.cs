@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
-	animator.SetBool("Hurt", false);
+		animator.SetBool("Hurt", false);
 
 	/* if (Input.GetButtonDown("Crouch"))
 	{

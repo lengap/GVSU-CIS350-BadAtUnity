@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4092476878747784203}
   - component: {fileID: 4092476878747784215}
   - component: {fileID: 4092476878747784214}
+  - component: {fileID: 3122582993289007414}
   - component: {fileID: 4092476878747784213}
   - component: {fileID: 4092476878747784208}
   - component: {fileID: 4092476878747784209}
@@ -129,6 +130,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5297937, y: 0.79843205}
   m_EdgeRadius: 0
+--- !u!61 &3122582993289007414
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092476878747784202}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.092000246, y: -0.092000484}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5186467, y: 0.7862835}
+  m_EdgeRadius: 0
 --- !u!50 &4092476878747784213
 Rigidbody2D:
   serializedVersion: 4
@@ -162,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2519a6c970d13ea449eed23b5ddbddc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   animator: {fileID: 4092476878935076546}
   respawn: 0
   health: 100
