@@ -8,6 +8,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     public float speed;
+    public int damage;
 
     private Transform player;
     private Vector2 target;
