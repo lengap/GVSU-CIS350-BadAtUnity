@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8350173349360789802}
   - component: {fileID: 8350173349360789803}
   - component: {fileID: 8242568159240764364}
+  - component: {fileID: -2407802740128199679}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -77,12 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ca5f0e7053dd444bd931510a71863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDistance: 25
+  playerDistance: 50
   health: 300
   player: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
   SpawnPoint: {fileID: 623819894221638793}
-  EnemyType: {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9,
-    type: 3}
+  EnemyType:
+  - {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
+  - {fileID: 1297160699926294168, guid: f9eeeca660ac9944caf7c5cf9dadb15e, type: 3}
+  - {fileID: 1297160699926294168, guid: 632ecc73fd3e0aa4cb7584a8cadbd248, type: 3}
   startTimeBtwSpawns: 10
 --- !u!50 &8350173349360789803
 Rigidbody2D:
@@ -131,6 +134,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7015611, y: 0.37514448}
   m_EdgeRadius: 0
+--- !u!114 &-2407802740128199679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350173349360789797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ca5f0e7053dd444bd931510a71863e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDistance: 0
+  health: 100
+  player: {fileID: 0}
+  SpawnPoint: {fileID: 0}
+  EnemyType: []
+  startTimeBtwSpawns: 0
 --- !u!1 &8350173349845703406
 GameObject:
   m_ObjectHideFlags: 0

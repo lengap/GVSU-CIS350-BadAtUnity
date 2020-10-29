@@ -17,12 +17,16 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         EnemyAI enemy = hitInfo.GetComponent<EnemyAI>();
+		ShotgunEnemyAI Shotgunner = hitInfo.GetComponent<ShotgunEnemyAI>();
         EnemySpawner spawner = hitInfo.GetComponent<EnemySpawner>();
         if(enemy != null)
         {
             enemy.TakeDamage(50);
         }
-
+		if(Shotgunner != null)
+        {
+            Shotgunner.TakeDamage(50);
+        }
         if (spawner != null)
         {
             spawner.TakeDamage(50);

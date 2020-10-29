@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -10,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public int health = 100;
     public Transform player;
     public Transform SpawnPoint;
-    public GameObject EnemyType;
+    public GameObject[] EnemyType;
     private float timeBtwSpawns;
     public float startTimeBtwSpawns;
 
@@ -27,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if ((Vector2.Distance(transform.position, player.position) <= playerDistance ) && timeBtwSpawns <= 0)
         {
-            Instantiate(EnemyType, SpawnPoint.position, Quaternion.identity);
+            Instantiate(EnemyType[Random.Range(0,3)], SpawnPoint.position, Quaternion.identity);
             timeBtwSpawns = startTimeBtwSpawns;
         }
         else {

@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Level_Generation : MonoBehaviour
 {
-
+	//Variables to hold Different Tiles
     [SerializeField]
     private Tile groundTile;
     [SerializeField]
@@ -22,20 +22,27 @@ public class Level_Generation : MonoBehaviour
     private Tilemap wallMap;
     [SerializeField]
     private GameObject player;
+	//Rate until a new room is created.
     [SerializeField]
     private int deviationRate = 10;
     [SerializeField]
+	//Amount of rooms the map generates
     private int roomRate = 15;
+	//Longest route to the finish the player has to run.
     [SerializeField]
     private int maxRouteLength;
     [SerializeField]
     private int maxRoutes = 20;
+	//Variable to hold the Spawner GameObject
 	public GameObject spawner;
+	//Max amount of spawners the map can have at a time.
 	public int maxSpnr;
+	//Max amount of items the map can have at a time.
 	public int maxItems;
-	
+	//Array for item game objects.
 	public GameObject[] items;
 	
+	//
 	private int spnrCount;
 	private int itemCount;
 	private bool isRoom;
