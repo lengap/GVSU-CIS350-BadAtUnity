@@ -20,8 +20,6 @@ public class Level_Generation : MonoBehaviour
     private Tilemap pitMap;
     [SerializeField]
     private Tilemap wallMap;
-    [SerializeField]
-    private GameObject player;
 	//Rate until a new room is created.
     [SerializeField]
     private int deviationRate = 10;
@@ -33,18 +31,31 @@ public class Level_Generation : MonoBehaviour
     private int maxRouteLength;
     [SerializeField]
     private int maxRoutes = 20;
-	//Variable to hold the Spawner GameObject
-	public GameObject spawner;
+	//Transform objects for player and spawner to determine distance between them.
+	public Transform SpawnerTrans;
+	public Transform PlayerTrans;
+	
 	//Max amount of spawners the map can have at a time.
 	public int maxSpnr;
 	//Max amount of items the map can have at a time.
 	public int maxItems;
+	//Max amount of landmines the map can have at a time.
+	public int maxMines;
+	
+	//Variable to hold the Spawner GameObject
+	public GameObject spawner;
 	//Array for item game objects.
 	public GameObject[] items;
+	//Variable to hold the player GameObject
+    public GameObject player;
+	public GameObject landmine;
 	
-	//
+	
+	//Counts for spawners, landmines, and items in game.
 	private int spnrCount;
+	private int landmineCount;
 	private int itemCount;
+	//Boolean for determining if a room is generated.
 	private bool isRoom;
     
 
@@ -58,6 +69,7 @@ public class Level_Generation : MonoBehaviour
 		isRoom = false;
 		spnrCount = 0;
 		itemCount = 0;
+		landmineCount = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -120,14 +132,14 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + xOffset, previousPos.y + yOffset, roomSize);
                         NewRoute(previousPos.x + xOffset, previousPos.y + yOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                     }
                     else
                     {
                         x = previousPos.x + xOffset;
                         y = previousPos.y + yOffset;
                         GenerateSquare(x, y, roomSize);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                         routeUsed = true;
                     }
                 }
@@ -139,14 +151,15 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x - yOffset, previousPos.y + xOffset, roomSize);
                         NewRoute(previousPos.x - yOffset, previousPos.y + xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                     }
                     else
                     {
                         y = previousPos.y + xOffset;
                         x = previousPos.x - yOffset;
                         GenerateSquare(x, y, roomSize);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateLandmines(x,y);
+						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
                         routeUsed = true;
                     }
                 }
@@ -193,9 +206,11 @@ public class Level_Generation : MonoBehaviour
     }
 	private void GenerateSpawner(int x, int y, bool room){
 		Vector3Int pos = new Vector3Int(x, y, 0);
-		if(isRoom && (spnrCount != maxSpnr)){
-			Instantiate(spawner, pos, Quaternion.identity);
-			spnrCount++;
+		if(Vector3.Distance(pos, PlayerTrans.position) > 50){
+			if(isRoom && (spnrCount != maxSpnr)){
+				Instantiate(spawner, pos, Quaternion.identity);
+				spnrCount++;
+			}
 		}
 	}
 	
@@ -207,6 +222,14 @@ public class Level_Generation : MonoBehaviour
 			itemCount++;
 		}
 		
+	}
+	
+	private void GenerateLandmines(int x, int y){
+		Vector3Int pos = new Vector3Int(x,y,-2);
+		if(landmineCount != maxMines){
+			Instantiate(landmine, pos, Quaternion.identity);
+			landmineCount++;
+		}
 	}
 	
 	

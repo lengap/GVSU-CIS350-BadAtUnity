@@ -605,17 +605,23 @@ MonoBehaviour:
   groundMap: {fileID: 1830465835}
   pitMap: {fileID: 1705323553}
   wallMap: {fileID: 1870343625}
-  player: {fileID: 4092476878747784202, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
   deviationRate: 10
   roomRate: 15
   maxRouteLength: 200
   maxRoutes: 20
-  spawner: {fileID: 8350173349360789797, guid: c555acd562f66614c84cf0fb640fab7a, type: 3}
+  SpawnerTrans: {fileID: 8350173349360789801, guid: c555acd562f66614c84cf0fb640fab7a,
+    type: 3}
+  PlayerTrans: {fileID: 1738079843}
   maxSpnr: 30
   maxItems: 15
+  maxMines: 10
+  spawner: {fileID: 8350173349360789797, guid: c555acd562f66614c84cf0fb640fab7a, type: 3}
   items:
   - {fileID: 1207951520718608252, guid: 1bb1eb155d7c4104f80e92ad17f0723e, type: 3}
   - {fileID: 460980585606383403, guid: 3592addef33d49c43a0c138f67339491, type: 3}
+  player: {fileID: 4092476878747784202, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
+  landmine: {fileID: 8980478966377852789, guid: 98e210df9a28d3d4fbc2f42494af4561,
+    type: 3}
 --- !u!156049354 &1472414390
 Grid:
   m_ObjectHideFlags: 0
@@ -1043,6 +1049,12 @@ TilemapCollider2D:
 --- !u!1 &1738079835 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4092476878747784202, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1312139919}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1738079843 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b,
     type: 3}
   m_PrefabInstance: {fileID: 1312139919}
   m_PrefabAsset: {fileID: 0}
