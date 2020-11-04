@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4274963807522147243}
   - component: {fileID: 7246667348624573760}
   - component: {fileID: 469180719666073864}
+  - component: {fileID: -9074262806662993162}
   m_Layer: 0
   m_Name: Landmine
   m_TagString: Untagged
@@ -143,3 +144,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25ff60db7934d894d8e98c16d3b41c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &-9074262806662993162
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980478966377852789}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

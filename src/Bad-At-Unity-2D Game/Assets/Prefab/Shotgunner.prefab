@@ -58,6 +58,8 @@ MonoBehaviour:
     type: 3}
   projectile3: {fileID: 1222976286999306774, guid: 02871934fc1e884499e150a28bb62e14,
     type: 3}
+  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
+    type: 3}
   health: 100
 --- !u!61 &1297160699926294174
 BoxCollider2D:

@@ -54,6 +54,8 @@ MonoBehaviour:
   FirePoint: {fileID: 6028735832534222156}
   projectile: {fileID: 1222976286999306774, guid: 586f0f16f5e392748aa208eba7ed41c2,
     type: 3}
+  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
+    type: 3}
   health: 100
 --- !u!61 &1297160699926294174
 BoxCollider2D:

@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     public Transform FirePoint;
 
     public GameObject projectile;
+    public GameObject deathEffect;
 
     public int health = 100;
 
@@ -70,7 +71,7 @@ public class EnemyAI : MonoBehaviour
 
     void Die()
     {
-        //add death animation
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

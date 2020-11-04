@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public HealthBar healthBar;
     public Animator animator;
+    public GameObject deathEffect;
     //variables
     public int respawn;
     public int health = 100;
@@ -31,14 +32,11 @@ public class Player : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 		animator.SetBool("Hurt", false);
-
-	/* if (Input.GetButtonDown("Crouch"))
-	{
-	    animator.SetBool("Crouching", true);
-	} else if (Input.GetButtonUp("Crouch")) 
-	{
-	    animator.SetBool("Crouching", false;
-	} */
+        if(horizontal==0)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(vertical));
+        }
+	
         if (horizontal > 0 && !facingRight)
         {
             Flip();
@@ -73,10 +71,15 @@ public class Player : MonoBehaviour
         health += damage;
         healthBar.SetHealth(health);
     }
+    
+    public void recovered()
+    {
+        animator.SetBool("Hurt", false);
+    }
 
     void Die()
     {
-        //add death animation
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         SceneManager.LoadScene(respawn);
     }

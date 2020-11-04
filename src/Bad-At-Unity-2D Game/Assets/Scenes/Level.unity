@@ -511,6 +511,12 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 968638711}
+    - target: {fileID: 4092476878747784208, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+        type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
+        type: 3}
     - target: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,6 +572,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4092476878747784215, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1982875407}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
 --- !u!1 &1472414388
@@ -1420,3 +1431,9 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!95 &1982875407 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4092476878935076546, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1312139919}
+  m_PrefabAsset: {fileID: 0}

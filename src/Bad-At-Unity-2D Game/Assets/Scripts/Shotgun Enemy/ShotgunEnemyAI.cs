@@ -19,6 +19,7 @@ public class ShotgunEnemyAI : MonoBehaviour
     public GameObject projectile1;
     public GameObject projectile2;
     public GameObject projectile3;
+    public GameObject deathEffect;
 
     public int health = 100;
 
@@ -75,7 +76,7 @@ public class ShotgunEnemyAI : MonoBehaviour
 
     void Die()
     {
-        //add death animation
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
