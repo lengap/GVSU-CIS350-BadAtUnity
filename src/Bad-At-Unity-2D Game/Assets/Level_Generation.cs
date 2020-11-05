@@ -41,6 +41,8 @@ public class Level_Generation : MonoBehaviour
 	public int maxItems;
 	//Max amount of landmines the map can have at a time.
 	public int maxMines;
+	//Max amount of sandbags the map can have at a time.
+	public int maxSandBags;
 	
 	//Variable to hold the Spawner GameObject
 	public GameObject spawner;
@@ -49,14 +51,16 @@ public class Level_Generation : MonoBehaviour
 	//Variable to hold the player GameObject
     public GameObject player;
 	public GameObject landmine;
+	public GameObject Sandbags;
 	
 	
-	//Counts for spawners, landmines, and items in game.
+	//Counts for spawners, landmines, sandbags, and items in game.
 	private int spnrCount;
 	private int landmineCount;
 	private int itemCount;
+	private int SandbagCnt;
 	//Boolean for determining if a room is generated.
-	private bool isRoom;
+	private int Size;
     
 
     private int routeCount = 0;
@@ -66,10 +70,10 @@ public class Level_Generation : MonoBehaviour
         int x = 0;
         int y = 0;
         int routeLength = 0;
-		isRoom = false;
 		spnrCount = 0;
 		itemCount = 0;
 		landmineCount = 0;
+		SandbagCnt = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -122,7 +126,6 @@ public class Level_Generation : MonoBehaviour
                 int roomSize = 1; //Hallway size
                 if (Random.Range(1, 100) <= roomRate)
                     roomSize = Random.Range(3, 6);
-					isRoom = true;
                 previousPos = new Vector2Int(x, y);
 
                 //Go Straight
@@ -132,14 +135,15 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + xOffset, previousPos.y + yOffset, roomSize);
                         NewRoute(previousPos.x + xOffset, previousPos.y + yOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                     }
                     else
                     {
                         x = previousPos.x + xOffset;
                         y = previousPos.y + yOffset;
                         GenerateSquare(x, y, roomSize);
-						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSandbags(x,y);
+						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                         routeUsed = true;
                     }
                 }
@@ -151,7 +155,7 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x - yOffset, previousPos.y + xOffset, roomSize);
                         NewRoute(previousPos.x - yOffset, previousPos.y + xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                     }
                     else
                     {
@@ -159,7 +163,7 @@ public class Level_Generation : MonoBehaviour
                         x = previousPos.x - yOffset;
                         GenerateSquare(x, y, roomSize);
 						GenerateLandmines(x,y);
-						//GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                         routeUsed = true;
                     }
                 }
@@ -170,14 +174,14 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + yOffset, previousPos.y - xOffset, roomSize);
                         NewRoute(previousPos.x + yOffset, previousPos.y - xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSpawner(previousPos.x, previousPos.y, Size);
                     }
                     else
                     {
                         y = previousPos.y - xOffset;
                         x = previousPos.x + yOffset;
                         GenerateSquare(x, y, roomSize);
-						GenerateSpawner(previousPos.x, previousPos.y, isRoom);
+						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
 						GenerateItems(x,y);
                         routeUsed = true;
                     }
@@ -188,6 +192,7 @@ public class Level_Generation : MonoBehaviour
                     x = previousPos.x + xOffset;
                     y = previousPos.y + yOffset;
                     GenerateSquare(x, y, roomSize);
+					GenerateSpawner(x,y,roomSize);
                 }
             }
         }
@@ -204,10 +209,10 @@ public class Level_Generation : MonoBehaviour
             }
         }
     }
-	private void GenerateSpawner(int x, int y, bool room){
+	private void GenerateSpawner(int x, int y, int size){
 		Vector3Int pos = new Vector3Int(x, y, 0);
 		if(Vector3.Distance(pos, PlayerTrans.position) > 50){
-			if(isRoom && (spnrCount != maxSpnr)){
+			if(size > 2 && (spnrCount != maxSpnr)){
 				Instantiate(spawner, pos, Quaternion.identity);
 				spnrCount++;
 			}
@@ -229,6 +234,13 @@ public class Level_Generation : MonoBehaviour
 		if(landmineCount != maxMines){
 			Instantiate(landmine, pos, Quaternion.identity);
 			landmineCount++;
+		}
+	}
+	private void GenerateSandbags(int x, int y){
+		Vector3Int pos = new Vector3Int(x,y,-2);
+		if(SandbagCnt != maxSandBags){
+			Instantiate(Sandbags, pos, Quaternion.identity);
+			SandbagCnt++;
 		}
 	}
 	
