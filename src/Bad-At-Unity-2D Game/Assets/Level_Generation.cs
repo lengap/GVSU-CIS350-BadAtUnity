@@ -14,12 +14,17 @@ public class Level_Generation : MonoBehaviour
     private Tile topWallTile;
     [SerializeField]
     private Tile botWallTile;
+	[SerializeField]
+	private Tile doorTile;
     [SerializeField]
     private Tilemap groundMap;
     [SerializeField]
     private Tilemap pitMap;
     [SerializeField]
     private Tilemap wallMap;
+	[SerializeField]
+	private Tilemap doorMap;
+	
 	//Rate until a new room is created.
     [SerializeField]
     private int deviationRate = 10;
@@ -44,8 +49,8 @@ public class Level_Generation : MonoBehaviour
 	public int maxMines;
 	//Max amount of sandbags the map can have at a time.
 	public int maxSandBags;
-	//Max amount of kitchens the map can have at a time.
-	public int maxKitchen;
+	//Max amount of Doors the map can have at a time.
+	public int maxDoors;
 	
 	//Variable to hold the Spawner GameObject
 	public GameObject spawner;
@@ -65,6 +70,7 @@ public class Level_Generation : MonoBehaviour
 	private int SandbagCnt;
 	private int kitCount;
 	private int initKitchenCnt;
+	private int doorCnt;
 	//Boolean for determining if a room is generated.
 	private int Size;
     
@@ -82,6 +88,7 @@ public class Level_Generation : MonoBehaviour
 		initKitchenCnt = 0;
 		SandbagCnt = 0;
 		kitCount = 0;
+		doorCnt = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -89,6 +96,7 @@ public class Level_Generation : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
+		FillDoors();
     }
 
     private void FillWalls()
@@ -99,7 +107,6 @@ public class Level_Generation : MonoBehaviour
             for (int yMap = bounds.yMin - 10; yMap <= bounds.yMax + 10; yMap++)
             {
                 Vector3Int pos = new Vector3Int(xMap, yMap, 0);
-				Vector3Int pos2 = new Vector3Int(xMap + 10,yMap,-2);
                 Vector3Int posBelow = new Vector3Int(xMap, yMap - 1, 0);
                 Vector3Int posAbove = new Vector3Int(xMap, yMap + 1, 0);
                 TileBase tile = groundMap.GetTile(pos);
@@ -111,7 +118,6 @@ public class Level_Generation : MonoBehaviour
                     if (tileBelow != null)
                     {
                         wallMap.SetTile(pos, topWallTile);
-						GenerateEnviornment(pos2);
                     }
                     else if (tileAbove != null)
                     {
@@ -121,6 +127,29 @@ public class Level_Generation : MonoBehaviour
             }
         }
     }
+	private void FillDoors(){
+		BoundsInt bounds = groundMap.cellBounds;
+        for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
+        {
+            for (int yMap = bounds.yMin - 10; yMap <= bounds.yMax + 10; yMap++)
+            {
+                Vector3Int pos = new Vector3Int(xMap, yMap, 0);
+                Vector3Int posBelow = new Vector3Int(xMap, yMap - 1, 0);
+                TileBase tile = groundMap.GetTile(pos);
+                TileBase tileBelow = groundMap.GetTile(posBelow);
+				if(doorCnt == maxDoors){
+					if (tile == null)
+					{
+						if (tileBelow != null)
+						{
+							doorMap.SetTile(pos, doorTile);
+						}
+					}
+				}
+            }
+        }
+    }
+	
 
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
     {
@@ -256,18 +285,4 @@ public class Level_Generation : MonoBehaviour
 			SandbagCnt++;
 		}
 	}
-	private void GenerateEnviornment(Vector3Int pos){
-		if(initKitchenCnt != 1){
-			Instantiate(kitchen, pos, Quaternion.identity);
-			initKitchenCnt++;
-		}
-		else if(Vector3.Distance(pos, KitTransform.position) > 50){
-			if(kitCount != maxKitchen){
-				Instantiate(kitchen, pos, Quaternion.identity);
-				kitCount++;
-			}
-		}
-	}
-	
-	
 }
