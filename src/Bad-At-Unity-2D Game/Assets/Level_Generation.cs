@@ -34,6 +34,7 @@ public class Level_Generation : MonoBehaviour
 	//Transform objects for player and spawner to determine distance between them.
 	public Transform SpawnerTrans;
 	public Transform PlayerTrans;
+	public Transform KitTransform;
 	
 	//Max amount of spawners the map can have at a time.
 	public int maxSpnr;
@@ -43,6 +44,8 @@ public class Level_Generation : MonoBehaviour
 	public int maxMines;
 	//Max amount of sandbags the map can have at a time.
 	public int maxSandBags;
+	//Max amount of kitchens the map can have at a time.
+	public int maxKitchen;
 	
 	//Variable to hold the Spawner GameObject
 	public GameObject spawner;
@@ -52,6 +55,7 @@ public class Level_Generation : MonoBehaviour
     public GameObject player;
 	public GameObject landmine;
 	public GameObject Sandbags;
+	public GameObject kitchen;
 	
 	
 	//Counts for spawners, landmines, sandbags, and items in game.
@@ -59,6 +63,8 @@ public class Level_Generation : MonoBehaviour
 	private int landmineCount;
 	private int itemCount;
 	private int SandbagCnt;
+	private int kitCount;
+	private int initKitchenCnt;
 	//Boolean for determining if a room is generated.
 	private int Size;
     
@@ -73,7 +79,9 @@ public class Level_Generation : MonoBehaviour
 		spnrCount = 0;
 		itemCount = 0;
 		landmineCount = 0;
+		initKitchenCnt = 0;
 		SandbagCnt = 0;
+		kitCount = 0;
         GenerateSquare(x, y, 1);
         Vector2Int previousPos = new Vector2Int(x, y);
         y += 3;
@@ -91,6 +99,7 @@ public class Level_Generation : MonoBehaviour
             for (int yMap = bounds.yMin - 10; yMap <= bounds.yMax + 10; yMap++)
             {
                 Vector3Int pos = new Vector3Int(xMap, yMap, 0);
+				Vector3Int pos2 = new Vector3Int(xMap + 10,yMap,-2);
                 Vector3Int posBelow = new Vector3Int(xMap, yMap - 1, 0);
                 Vector3Int posAbove = new Vector3Int(xMap, yMap + 1, 0);
                 TileBase tile = groundMap.GetTile(pos);
@@ -102,6 +111,7 @@ public class Level_Generation : MonoBehaviour
                     if (tileBelow != null)
                     {
                         wallMap.SetTile(pos, topWallTile);
+						GenerateEnviornment(pos2);
                     }
                     else if (tileAbove != null)
                     {
@@ -135,15 +145,13 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + xOffset, previousPos.y + yOffset, roomSize);
                         NewRoute(previousPos.x + xOffset, previousPos.y + yOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                     }
                     else
                     {
                         x = previousPos.x + xOffset;
                         y = previousPos.y + yOffset;
                         GenerateSquare(x, y, roomSize);
-						GenerateSandbags(x,y);
-						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
+						//GenerateSandbags(previousPos.x,previousPos.y);
                         routeUsed = true;
                     }
                 }
@@ -155,7 +163,6 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x - yOffset, previousPos.y + xOffset, roomSize);
                         NewRoute(previousPos.x - yOffset, previousPos.y + xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                     }
                     else
                     {
@@ -163,7 +170,6 @@ public class Level_Generation : MonoBehaviour
                         x = previousPos.x - yOffset;
                         GenerateSquare(x, y, roomSize);
 						GenerateLandmines(x,y);
-						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
                         routeUsed = true;
                     }
                 }
@@ -174,14 +180,12 @@ public class Level_Generation : MonoBehaviour
                     {
                         GenerateSquare(previousPos.x + yOffset, previousPos.y - xOffset, roomSize);
                         NewRoute(previousPos.x + yOffset, previousPos.y - xOffset, Random.Range(routeLength, maxRouteLength), previousPos);
-						GenerateSpawner(previousPos.x, previousPos.y, Size);
                     }
                     else
                     {
                         y = previousPos.y - xOffset;
                         x = previousPos.x + yOffset;
                         GenerateSquare(x, y, roomSize);
-						GenerateSpawner(previousPos.x, previousPos.y, roomSize);
 						GenerateItems(x,y);
                         routeUsed = true;
                     }
@@ -192,7 +196,6 @@ public class Level_Generation : MonoBehaviour
                     x = previousPos.x + xOffset;
                     y = previousPos.y + yOffset;
                     GenerateSquare(x, y, roomSize);
-					GenerateSpawner(x,y,roomSize);
                 }
             }
         }
@@ -208,7 +211,17 @@ public class Level_Generation : MonoBehaviour
                 groundMap.SetTile(tilePos, groundTile);
             }
         }
+		
+		Vector3Int pos = new Vector3Int(x, y, 0);
+		if(Vector3.Distance(pos, PlayerTrans.position) > 15){
+			if(radius > 2 && (spnrCount != maxSpnr)){
+				Instantiate(spawner, pos, Quaternion.identity);
+				spnrCount++;
+			}
+		}
+		
     }
+	/**
 	private void GenerateSpawner(int x, int y, int size){
 		Vector3Int pos = new Vector3Int(x, y, 0);
 		if(Vector3.Distance(pos, PlayerTrans.position) > 50){
@@ -218,7 +231,7 @@ public class Level_Generation : MonoBehaviour
 			}
 		}
 	}
-	
+	**/
 	private void GenerateItems(int x, int y){
 		Vector3Int pos = new Vector3Int(x,y,0);
 		int chooseItem = Random.Range(0,2);
@@ -241,6 +254,18 @@ public class Level_Generation : MonoBehaviour
 		if(SandbagCnt != maxSandBags){
 			Instantiate(Sandbags, pos, Quaternion.identity);
 			SandbagCnt++;
+		}
+	}
+	private void GenerateEnviornment(Vector3Int pos){
+		if(initKitchenCnt != 1){
+			Instantiate(kitchen, pos, Quaternion.identity);
+			initKitchenCnt++;
+		}
+		else if(Vector3.Distance(pos, KitTransform.position) > 50){
+			if(kitCount != maxKitchen){
+				Instantiate(kitchen, pos, Quaternion.identity);
+				kitCount++;
+			}
 		}
 	}
 	

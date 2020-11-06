@@ -88,7 +88,7 @@ MonoBehaviour:
   - {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
   - {fileID: 1297160699926294168, guid: f9eeeca660ac9944caf7c5cf9dadb15e, type: 3}
   - {fileID: 1297160699926294168, guid: 632ecc73fd3e0aa4cb7584a8cadbd248, type: 3}
-  startTimeBtwSpawns: 10
+  startTimeBtwSpawns: 15
 --- !u!50 &8350173349360789803
 Rigidbody2D:
   serializedVersion: 4
@@ -163,9 +163,9 @@ Animation:
   m_GameObject: {fileID: 8350173349360789797}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 112c749ac6ed0a74895f4330cc2b6ab3, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 112c749ac6ed0a74895f4330cc2b6ab3, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
