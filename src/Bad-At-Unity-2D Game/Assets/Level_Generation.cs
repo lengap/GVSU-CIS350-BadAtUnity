@@ -96,7 +96,6 @@ public class Level_Generation : MonoBehaviour
         NewRoute(x, y, routeLength, previousPos);
 
         FillWalls();
-		FillDoors();
     }
 
     private void FillWalls()
@@ -117,35 +116,17 @@ public class Level_Generation : MonoBehaviour
                     pitMap.SetTile(pos, pitTile);
                     if (tileBelow != null)
                     {
-                        wallMap.SetTile(pos, topWallTile);
+						if(Random.Range(0,10) == 1 && doorCnt != maxDoors){
+							doorMap.SetTile(pos, doorTile);
+						}else{
+							wallMap.SetTile(pos, topWallTile);
+						}
                     }
                     else if (tileAbove != null)
                     {
                         wallMap.SetTile(pos, botWallTile);
                     }
                 }
-            }
-        }
-    }
-	private void FillDoors(){
-		BoundsInt bounds = groundMap.cellBounds;
-        for (int xMap = bounds.xMin - 10; xMap <= bounds.xMax + 10; xMap++)
-        {
-            for (int yMap = bounds.yMin - 10; yMap <= bounds.yMax + 10; yMap++)
-            {
-                Vector3Int pos = new Vector3Int(xMap, yMap, 0);
-                Vector3Int posBelow = new Vector3Int(xMap, yMap - 1, 0);
-                TileBase tile = groundMap.GetTile(pos);
-                TileBase tileBelow = groundMap.GetTile(posBelow);
-				if(doorCnt == maxDoors){
-					if (tile == null)
-					{
-						if (tileBelow != null)
-						{
-							doorMap.SetTile(pos, doorTile);
-						}
-					}
-				}
             }
         }
     }
