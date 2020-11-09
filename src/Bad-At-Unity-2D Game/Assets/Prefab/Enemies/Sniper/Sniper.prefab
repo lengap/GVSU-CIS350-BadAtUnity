@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c058516fb5fe1f4dbeb3a88057f95fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3891745466335059584}
   speed: 0
   stopDist: 2.5
   retreatDist: 1
@@ -114,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1297160700382729328}
   - component: {fileID: 1297160700382729331}
+  - component: {fileID: 3891745466335059584}
   m_Layer: 0
   m_Name: BaldGFX
   m_TagString: Untagged
@@ -185,6 +187,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3891745466335059584
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297160700382729329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9a38de8a0cabaa4387cca341b08c633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1832822946379643385
 GameObject:
   m_ObjectHideFlags: 0

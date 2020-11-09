@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class ShotgunEnemyAI : MonoBehaviour
 {
+    public Animator animator;
     public float speed;
     public float stopDist;
     public float retreatDist;
-
     private Transform player;
 
     private float timeBtwShots;
@@ -37,13 +37,16 @@ public class ShotgunEnemyAI : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
         }
         else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
         {
             transform.position = this.transform.position;
+            animator.SetBool("isRunning", false);
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDist) {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            animator.SetBool("isRunning", true);
         }
 
         if (timeBtwShots <= 0)
