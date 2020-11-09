@@ -9,11 +9,14 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
     public GameObject impactEffect;
+    public int damage;
+    public int startDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.right * speed;
+        startDamage = damage;
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
@@ -23,15 +26,15 @@ public class Bullet : MonoBehaviour
         EnemySpawner spawner = hitInfo.GetComponent<EnemySpawner>();
         if(enemy != null)
         {
-            enemy.TakeDamage(50);
+            enemy.TakeDamage(damage);
         }
 		if(Shotgunner != null)
         {
-            Shotgunner.TakeDamage(50);
+            Shotgunner.TakeDamage(damage);
         }
         if (spawner != null)
         {
-            spawner.TakeDamage(50);
+            spawner.TakeDamage(damage);
         }
         Instantiate(impactEffect, transform.position, transform.rotation);
 

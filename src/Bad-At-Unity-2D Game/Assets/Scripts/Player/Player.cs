@@ -13,16 +13,21 @@ public class Player : MonoBehaviour
     public int respawn;
     public int health = 100;
     private int maxHealth = 100;
-    bool facingRight = true;
+    public bool facingRight = true;
+    private bool activeShield;
+    private bool activeDamage;
     float speed = 3.0f;
     private float horizontal;
     private float vertical;
+    
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         healthBar.SetMaxHealth(maxHealth);
+        activeShield = false;
+        activeDamage=false;
     }
 
     // Update is called once per frame
@@ -58,12 +63,17 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        healthBar.SetHealth(health);
-		animator.SetBool("Hurt", true);
-        if (health <= 0)
+        if (activeShield == false)
         {
-            Die();
+
+            health -= damage;
+            healthBar.SetHealth(health);
+            animator.SetBool("Hurt", true);
+
+            if (health <= 0)
+            {
+                Die();
+            }
         }
     }
 	public void HealDamage(int damage)
@@ -75,6 +85,25 @@ public class Player : MonoBehaviour
     public void recovered()
     {
         animator.SetBool("Hurt", false);
+    }
+
+    public void activateShield()
+    {
+        activeShield = true;
+    }
+
+    public void activateDamage()
+    {
+        if(activeDamage  == false)
+        {
+            activeDamage = true;
+        }
+
+        else
+        {
+            activeDamage = false;
+        }
+        
     }
 
     void Die()

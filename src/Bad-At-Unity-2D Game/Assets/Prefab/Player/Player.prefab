@@ -104,6 +104,14 @@ MonoBehaviour:
   FirePoint: {fileID: 4092476879008159757}
   bulletPrefab: {fileID: 4179820206859860797, guid: 8c594eb6cae022a4aab84b8338d0837e,
     type: 3}
+  animator: {fileID: 4092476878935076546}
+  activeShotgun: 0
+  SGBullet1: {fileID: 4179820206859860797, guid: 2d1c1ea26fbe96b498ea72e86f1e541b,
+    type: 3}
+  SGBullet2: {fileID: 4179820206859860797, guid: 6848fe23928b2994480121c20f3b89e7,
+    type: 3}
+  SGBullet3: {fileID: 4179820206859860797, guid: 4f9dd06ab28885b4bbef01a39fe4d356,
+    type: 3}
 --- !u!61 &4092476878747784214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -191,8 +199,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   animator: {fileID: 4092476878935076546}
+  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
+    type: 3}
   respawn: 0
   health: 100
+  facingRight: 1
 --- !u!95 &4092476878747784209
 Animator:
   serializedVersion: 3
