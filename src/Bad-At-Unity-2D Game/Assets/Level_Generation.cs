@@ -243,7 +243,7 @@ public class Level_Generation : MonoBehaviour
 	}
 	**/
 	private void GenerateItems(int x, int y){
-		Vector3Int pos = new Vector3Int(x,y,0);
+		Vector3Int pos = new Vector3Int(x,y,-2);
 		int chooseItem = Random.Range(0,2);
 		if(itemCount != maxItems){
 			Instantiate(items[chooseItem], pos, Quaternion.identity);
