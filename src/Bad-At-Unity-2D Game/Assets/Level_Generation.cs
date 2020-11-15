@@ -60,7 +60,7 @@ public class Level_Generation : MonoBehaviour
     public GameObject player;
 	public GameObject landmine;
 	public GameObject Sandbags;
-	public GameObject kitchen;
+	public GameObject Portal;
 	
 	
 	//Counts for spawners, landmines, sandbags, and items in game.
@@ -117,10 +117,12 @@ public class Level_Generation : MonoBehaviour
                     if (tileBelow != null)
                     {
 						if(Random.Range(0,10) == 1 && doorCnt != maxDoors){
-							doorMap.SetTile(pos, doorTile);
-						}else{
-							wallMap.SetTile(pos, topWallTile);
+							Instantiate(Portal, posBelow, Quaternion.identity);
+							doorCnt++;
+							//doorMap.SetTile(pos, doorTile);
 						}
+						wallMap.SetTile(pos, topWallTile);
+						
                     }
                     else if (tileAbove != null)
                     {

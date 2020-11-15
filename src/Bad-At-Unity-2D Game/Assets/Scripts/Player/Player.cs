@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public GameObject deathEffect;
     //variables
-    public int respawn;
+    //public int respawn;
     public int health = 100;
     private int maxHealth = 100;
     public bool facingRight = true;
@@ -110,6 +110,6 @@ public class Player : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        SceneManager.LoadScene(respawn);
+        SceneManager.LoadScene("Level");
     }
 }

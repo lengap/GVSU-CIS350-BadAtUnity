@@ -786,7 +786,7 @@ MonoBehaviour:
     type: 3}
   Sandbags: {fileID: 8362610119614473625, guid: 96f7688f645fe57469c9f45595645f89,
     type: 3}
-  kitchen: {fileID: 313653347627331772, guid: 2156c8b06ae446248bfd087618ab634b, type: 3}
+  Portal: {fileID: 19837938288626922, guid: f1a62316c5a064446a452e358af1bd67, type: 3}
 --- !u!156049354 &1472414390
 Grid:
   m_ObjectHideFlags: 0

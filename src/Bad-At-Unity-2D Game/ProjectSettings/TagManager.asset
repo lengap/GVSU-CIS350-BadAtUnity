@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MedKit
   - Battery
+  - Portal
   layers:
   - Default
   - TransparentFX
