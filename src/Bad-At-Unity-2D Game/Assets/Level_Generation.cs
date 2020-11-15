@@ -107,6 +107,7 @@ public class Level_Generation : MonoBehaviour
             {
                 Vector3Int pos = new Vector3Int(xMap, yMap, 0);
                 Vector3Int posBelow = new Vector3Int(xMap, yMap - 1, 0);
+				Vector3Int PortalPos = new Vector3Int(xMap + 5, yMap - 1, -2);
                 Vector3Int posAbove = new Vector3Int(xMap, yMap + 1, 0);
                 TileBase tile = groundMap.GetTile(pos);
                 TileBase tileBelow = groundMap.GetTile(posBelow);
@@ -116,8 +117,8 @@ public class Level_Generation : MonoBehaviour
                     pitMap.SetTile(pos, pitTile);
                     if (tileBelow != null)
                     {
-						if(Random.Range(0,10) == 1 && doorCnt != maxDoors){
-							Instantiate(Portal, posBelow, Quaternion.identity);
+						if(Random.Range(0,10) == 1 && doorCnt < maxDoors){
+							Instantiate(Portal, PortalPos, Quaternion.identity);
 							doorCnt++;
 							//doorMap.SetTile(pos, doorTile);
 						}

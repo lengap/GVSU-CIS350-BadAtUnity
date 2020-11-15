@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ca5f0e7053dd444bd931510a71863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDistance: 0
+  playerDistance: 25
   health: 100
-  player: {fileID: 0}
+  player: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
   SpawnPoint: {fileID: 0}
   EnemyType: []
   startTimeBtwSpawns: 0

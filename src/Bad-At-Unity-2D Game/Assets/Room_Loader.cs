@@ -8,7 +8,7 @@ public class Room_Loader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //SceneManager.LoadSceneAsync("Testing");
     }
 
     // Update is called once per frame
@@ -23,7 +23,8 @@ public class Room_Loader : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-                SceneManager.LoadScene(1);
+				SceneManager.LoadScene("RoomTest");
+				SceneManager.UnloadScene("Level");
             }
         }
 		
