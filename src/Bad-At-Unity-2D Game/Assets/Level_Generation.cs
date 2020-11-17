@@ -15,7 +15,16 @@ public class Level_Generation : MonoBehaviour
     [SerializeField]
     private Tile botWallTile;
 	[SerializeField]
-	private Tile doorTile;
+	private Tile shipTileOne;
+	[SerializeField]
+	private Tile shipTileTwo;
+	[SerializeField]
+	private Tile joustTileOne;
+	[SerializeField]
+	private Tile joustTileTwo;
+	[SerializeField]
+	private Tile joustTileThree;
+	
     [SerializeField]
     private Tilemap groundMap;
     [SerializeField]
@@ -23,7 +32,15 @@ public class Level_Generation : MonoBehaviour
     [SerializeField]
     private Tilemap wallMap;
 	[SerializeField]
-	private Tilemap doorMap;
+	private Tilemap shipMapOne;
+	[SerializeField]
+	private Tilemap shipMapTwo;
+	[SerializeField]
+	private Tilemap joustMapOne;
+	[SerializeField]
+	private Tilemap joustMapTwo;
+	[SerializeField]
+	private Tilemap joustMapThree;
 	
 	//Rate until a new room is created.
     [SerializeField]
@@ -117,12 +134,29 @@ public class Level_Generation : MonoBehaviour
                     pitMap.SetTile(pos, pitTile);
                     if (tileBelow != null)
                     {
-						if(Random.Range(0,10) == 1 && doorCnt < maxDoors){
+						if(Random.Range(0,50) == 1 && doorCnt < maxDoors){
 							Instantiate(Portal, PortalPos, Quaternion.identity);
 							doorCnt++;
 							//doorMap.SetTile(pos, doorTile);
 						}
+						if(Random.Range(0,50) == 1){
+							joustMapOne.SetTile(pos, joustTileOne);
+						}
+						else if(Random.Range(0,50) == 5){
+							joustMapTwo.SetTile(pos, joustTileTwo);
+						}
+						else if(Random.Range(0,50) == 10){
+							joustMapThree.SetTile(pos, joustTileThree);
+						}
+						else if(Random.Range(0,50) == 15){
+							shipMapOne.SetTile(pos, shipTileOne);
+						}
+						else if(Random.Range(0,50) == 20){
+							shipMapTwo.SetTile(pos, shipTileTwo);
+						}
+						else{
 						wallMap.SetTile(pos, topWallTile);
+						}
 						
                     }
                     else if (tileAbove != null)
@@ -234,17 +268,7 @@ public class Level_Generation : MonoBehaviour
 		}
 		
     }
-	/**
-	private void GenerateSpawner(int x, int y, int size){
-		Vector3Int pos = new Vector3Int(x, y, 0);
-		if(Vector3.Distance(pos, PlayerTrans.position) > 50){
-			if(size > 2 && (spnrCount != maxSpnr)){
-				Instantiate(spawner, pos, Quaternion.identity);
-				spnrCount++;
-			}
-		}
-	}
-	**/
+	
 	private void GenerateItems(int x, int y){
 		Vector3Int pos = new Vector3Int(x,y,-2);
 		int chooseItem = Random.Range(0,2);

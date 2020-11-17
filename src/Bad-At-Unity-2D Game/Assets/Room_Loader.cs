@@ -23,8 +23,16 @@ public class Room_Loader : MonoBehaviour
             Player player = other.GetComponent<Player>();
             if (player != null)
             {
-				SceneManager.LoadScene("RoomTest");
-				SceneManager.UnloadScene("Level");
+				if(SceneManager.GetActiveScene().name == "RoomTest"){
+					SceneManager.LoadScene("Level");
+					SceneManager.UnloadScene("RoomTest");
+					
+					Destroy(gameObject);
+				}
+				else if (SceneManager.GetActiveScene().name == "Level"){
+					SceneManager.LoadScene("RoomTest");
+					SceneManager.UnloadScene("Level");
+				}
             }
         }
 		

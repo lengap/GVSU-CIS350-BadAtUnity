@@ -24,10 +24,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if((Vector2.Distance(transform.position, player.position)<= playerDistance )){
+		if((Vector2.Distance(transform.position, player.position) <= playerDistance )){
 			if (timeBtwSpawns <= 0)
 			{
-				Instantiate(EnemyType[Random.Range(0,3)], SpawnPoint.position, Quaternion.identity);
+				Instantiate(EnemyType[Random.Range(0,2)], SpawnPoint.position, Quaternion.identity);
 				timeBtwSpawns = startTimeBtwSpawns;
 			}
 			else {
