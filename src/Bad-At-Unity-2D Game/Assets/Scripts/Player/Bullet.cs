@@ -24,11 +24,16 @@ public class Bullet : MonoBehaviour
         EnemyAI enemy = hitInfo.GetComponent<EnemyAI>();
 		ShotgunEnemyAI Shotgunner = hitInfo.GetComponent<ShotgunEnemyAI>();
         EnemySpawner spawner = hitInfo.GetComponent<EnemySpawner>();
-        if(enemy != null)
+        EnemyTransport transport = hitInfo.GetComponent<EnemyTransport>();
+        if (enemy != null)
         {
             enemy.TakeDamage(damage);
         }
-		if(Shotgunner != null)
+        if (transport != null)
+        {
+            transport.TakeDamage(damage);
+        }
+        if (Shotgunner != null)
         {
             Shotgunner.TakeDamage(damage);
         }

@@ -38,7 +38,7 @@ public class KamikazeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if three shots have not been fired
+        //if three shots have not been fired, move like normal
         if (shotCount < 3)
         {
             //if further than stop distance, move towards player
@@ -86,6 +86,21 @@ public class KamikazeAI : MonoBehaviour
 
 
 
+    }
+
+    //if kamikaze runs into player (melee attack)- 50 damage
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(other.name);
+        if (other.CompareTag("Player"))
+        {
+            Player player = other.GetComponent<Player>();
+            if (player != null)
+            {
+
+                player.TakeDamage(50);
+            }
+        }
     }
 
     public void TakeDamage( int damage)

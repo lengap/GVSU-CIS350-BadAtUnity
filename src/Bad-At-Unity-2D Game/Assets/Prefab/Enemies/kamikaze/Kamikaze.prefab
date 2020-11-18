@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1297160699926294170}
-  - component: {fileID: 737098854837134927}
+  - component: {fileID: -8560291935068546670}
   - component: {fileID: 1297160699926294174}
   - component: {fileID: 1297160699926294171}
   m_Layer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &737098854837134927
+--- !u!114 &-8560291935068546670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297160699926294168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4307911b99e0204c8bd1b2a2c979f49, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f176863461f9d8488e99a2023c76a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
@@ -52,15 +52,14 @@ MonoBehaviour:
   retreatDist: 1
   startTimeBtwShots: 6
   FirePoint: {fileID: 6028735832534222156}
-  projectile1: {fileID: 1222976286999306774, guid: a7ef5efb1b54045449352d29d494f2b4,
+  projectile1: {fileID: 1222976286999306774, guid: 24ffa45286178354a934f9049e1dc2dd,
     type: 3}
-  projectile2: {fileID: 1222976286999306774, guid: abf068171b7be1346b1e9ac127eee12a,
+  projectile2: {fileID: 1222976286999306774, guid: 96a64c70bf3fb414596f0763c9d83472,
     type: 3}
-  projectile3: {fileID: 1222976286999306774, guid: 02871934fc1e884499e150a28bb62e14,
+  projectile3: {fileID: 1222976286999306774, guid: 59ce0ef3c2bfbce428944d69ad44e610,
     type: 3}
-  deathEffect: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
-    type: 3}
-  health: 100
+  deathEffect: {fileID: 0}
+  health: 300
 --- !u!61 &1297160699926294174
 BoxCollider2D:
   m_ObjectHideFlags: 0
