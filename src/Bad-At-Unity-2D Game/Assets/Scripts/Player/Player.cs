@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public GameObject deathEffect;
     //variables
     //public int respawn;
+    public int battery = 100;
+    public bool emptyBattery = false;
     public int health = 100;
     private int maxHealth = 100;
     public bool facingRight = true;
@@ -53,6 +55,17 @@ public class Player : MonoBehaviour
         }
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            if(!emptyBattery)
+            {
+                battery-= 1;
+            } else
+            {
+                checkBattery();
+            }
+        }
     }
 
     private void Flip()
@@ -60,6 +73,21 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+    public void checkBattery()
+    {
+        if(battery > 1) 
+        {
+            emptyBattery = false;
+        } else
+        {
+            emptyBattery = true;
+        }
+    }
+    public void incBattery()
+    {
+        battery = battery + 25;
+    }
+
 
     public void TakeDamage(int damage)
     {

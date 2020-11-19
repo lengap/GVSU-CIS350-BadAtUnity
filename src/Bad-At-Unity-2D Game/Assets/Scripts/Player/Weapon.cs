@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public Transform FirePoint; //This is where the bullet is created
     public GameObject bulletPrefab; //prefab for the bullet sprite and physics
     public Animator animator; //initializes animator for shooting animation
+    public Player player;
     public bool activeShotgun;
 
     public GameObject SGBullet1;
@@ -22,9 +23,10 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        //Player player = other.GetComponent<Player>();
 
         //Can change fire input in "Project input settings"
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))//&& player.emptyBattery
         {
             Shoot();
             animator.SetBool("Shooting", true);
