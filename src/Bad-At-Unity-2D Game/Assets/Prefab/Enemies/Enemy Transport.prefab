@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &398655164306935328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 623819894221638793}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &623819894221638793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398655164306935328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.224, y: -0.351, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8350173349360789801}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7095859698899909959
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7095859698899909959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.375, y: -0.131, z: -5}
+  m_LocalPosition: {x: -0.203, y: 0.098, z: -5}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 8350173349360789801}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8350173349360789797
 GameObject:
@@ -91,7 +61,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8350173349845703405}
-  - {fileID: 623819894221638793}
   - {fileID: 5307651089629177119}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,7 +80,7 @@ MonoBehaviour:
   playerDistance: 15
   health: 500
   player: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
-  SpawnPoint: {fileID: 623819894221638793}
+  SpawnPoint: {fileID: 0}
   EnemyType:
   - {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
   - {fileID: 1297160699926294168, guid: f9eeeca660ac9944caf7c5cf9dadb15e, type: 3}
@@ -183,7 +152,7 @@ GameObject:
   - component: {fileID: 8350173349845703404}
   - component: {fileID: 2514772632629586977}
   m_Layer: 0
-  m_Name: SpawnerGFX
+  m_Name: RobotGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
