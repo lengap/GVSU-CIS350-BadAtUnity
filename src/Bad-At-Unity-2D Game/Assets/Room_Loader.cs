@@ -30,13 +30,17 @@ public class Room_Loader : MonoBehaviour
 					Destroy(gameObject);
 				}
 				else if (SceneManager.GetActiveScene().name == "Level"){
-					int rand = Random.Range(0,2);
+					int rand = Random.Range(0,3);
 					if(rand == 0){
 						SceneManager.LoadScene("Bedroom");
 						SceneManager.UnloadSceneAsync("Level");
 					}
 					if(rand == 1){
 						SceneManager.LoadScene("Office");
+						SceneManager.UnloadSceneAsync("Level");
+					}
+					if(rand == 2){
+						SceneManager.LoadScene("Library");
 						SceneManager.UnloadSceneAsync("Level");
 					}
 					
