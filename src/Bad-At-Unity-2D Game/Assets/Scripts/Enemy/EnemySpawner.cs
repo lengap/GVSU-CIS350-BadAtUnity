@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform SpawnPoint;
     public GameObject[] EnemyType;
     private float timeBtwSpawns;
+	private int enemyCnt = 0;
     public float startTimeBtwSpawns;
 
 
@@ -28,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
 			if (timeBtwSpawns <= 0)
 			{
 				Instantiate(EnemyType[Random.Range(0,2)], SpawnPoint.position, Quaternion.identity);
+				Debug.Log(enemyCnt);
 				timeBtwSpawns = startTimeBtwSpawns;
 			}
 			else {
