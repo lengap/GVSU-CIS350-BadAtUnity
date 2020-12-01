@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 8350173349360789797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -6.933365}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 8350173349845703405}
   - {fileID: 5307651089629177119}
@@ -80,12 +80,6 @@ MonoBehaviour:
   playerDistance: 15
   health: 500
   player: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
-  SpawnPoint: {fileID: 0}
-  EnemyType:
-  - {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
-  - {fileID: 1297160699926294168, guid: f9eeeca660ac9944caf7c5cf9dadb15e, type: 3}
-  - {fileID: 1297160699926294168, guid: 632ecc73fd3e0aa4cb7584a8cadbd248, type: 3}
-  startTimeBtwSpawns: 5
   speed: 0.5
   stopDist: 3.5
   retreatDist: 1
