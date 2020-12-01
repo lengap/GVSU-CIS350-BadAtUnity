@@ -50,8 +50,9 @@ public class EnemyAI : MonoBehaviour
 
         if (timeBtwShots <= 0)
         {
-
+            //shoot
             Instantiate(projectile, FirePoint.position, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play("EnemyShoot");
             timeBtwShots = startTimeBtwShots;
 
         }

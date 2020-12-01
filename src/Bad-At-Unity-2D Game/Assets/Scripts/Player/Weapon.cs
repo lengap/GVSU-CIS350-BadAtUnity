@@ -30,6 +30,8 @@ public class Weapon : MonoBehaviour
         {
             Shoot();
             animator.SetBool("Shooting", true);
+            FindObjectOfType<AudioManager>().Play("PlayerShoot");
+
         } else
         {
             animator.SetBool("Shooting", false);
