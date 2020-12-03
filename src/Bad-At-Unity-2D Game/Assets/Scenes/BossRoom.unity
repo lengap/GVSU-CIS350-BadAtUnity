@@ -3301,6 +3301,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2514772632629586977, guid: b3b059b7978e6f64cb876a5b60454315,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 594bf3454d58a4f4992e6ce5fafd5bc7, type: 2}
+    - target: {fileID: 2514772632629586977, guid: b3b059b7978e6f64cb876a5b60454315,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484361545815022515, guid: b3b059b7978e6f64cb876a5b60454315,
+        type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 1755349173569476, guid: 3c45864be6a059a4a82a25e285298338,
+        type: 3}
     - target: {fileID: 8350173349360789797, guid: b3b059b7978e6f64cb876a5b60454315,
         type: 3}
       propertyPath: m_Name

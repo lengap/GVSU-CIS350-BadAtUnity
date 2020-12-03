@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour {
 
     public float speed;
     public int damage;
-
+    public GameObject impactEffect;
     private Transform player;
     private Vector2 target;
 
@@ -32,6 +32,9 @@ public class Projectile : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        
+        Instantiate(impactEffect, transform.position, transform.rotation);
+
         Debug.Log(other.name);
         if (other.CompareTag("Player")) {
             DestroyProjectile();

@@ -80,6 +80,7 @@ MonoBehaviour:
   playerDistance: 15
   health: 500
   player: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b, type: 3}
+  animator: {fileID: 2514772632629586977}
   speed: 0.5
   stopDist: 3.5
   retreatDist: 1
@@ -226,7 +227,7 @@ Animator:
   m_GameObject: {fileID: 8350173349845703406}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3627b32b402ca342b841b0a7998292a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -20,8 +20,12 @@ public class EnemyTransport : MonoBehaviour
     public Transform FirePoint;
 
     public GameObject projectile;
-    //public GameObject deathEffect;
-    //public Animator animator;
+    public GameObject deathEffect;
+    public Animator animator;
+
+    public bool facingRight = false;
+    private float horizontal;
+    private float vertical;
 
 
 
@@ -35,22 +39,34 @@ public class EnemyTransport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            //animator.SetBool("isRunning", true);
+            animator.SetBool("IsMoving", true);
         }
         else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
         {
             transform.position = this.transform.position;
-            //animator.SetBool("isRunning", false);
+            animator.SetBool("IsMoving", false);
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-            //animator.SetBool("isRunning", true);
+            animator.SetBool("IsMoving", true);
         }
+        /*
+        if (horizontal > 0 && !facingRight)
+        {
+            Flip();
+        }
+
+        else if (horizontal < 0 && facingRight)
+        {
+            Flip();
+        }*/
 
         if (timeBtwShots <= 0)
         {
@@ -64,7 +80,13 @@ public class EnemyTransport : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-
+    /*
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+    */
     public void TakeDamage(int damage) {
         health -= damage;
         if (health <= 0) {
@@ -75,6 +97,7 @@ public class EnemyTransport : MonoBehaviour
     }
 
     void Destroy() {
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);    
     }
 }
