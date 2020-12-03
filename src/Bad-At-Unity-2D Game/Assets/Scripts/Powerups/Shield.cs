@@ -9,6 +9,8 @@ public class Shield : MonoBehaviour
     public float time;
     private float timeStore;
     private bool shieldActive;
+	
+	private Player player;
 
 
 
@@ -24,26 +26,28 @@ public class Shield : MonoBehaviour
     {
         if (shieldActive == true)
         {
-            if (time > 0)
+            if (time < 0)
             {
-                time -= Time.deltaTime;
+				shieldActive = false;
+				player.deactivateShield();
+                
+                time = timeStore;
             }
             else
             {
-                shieldActive = false;
-                
-                time = timeStore;
+				Debug.Log(time);
+                time -= Time.deltaTime;   
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Player player = hitInfo.GetComponent<Player>();
-        if (player != null)
+        Player temp = hitInfo.GetComponent<Player>();
+        if (temp != null)
         {
             shieldActive = true;
-            player.activateShield();
+            temp.activateShield();
         }
 
         Destroy(gameObject);

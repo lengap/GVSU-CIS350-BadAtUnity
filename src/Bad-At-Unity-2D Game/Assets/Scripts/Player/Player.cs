@@ -109,6 +109,14 @@ public class Player : MonoBehaviour
         health += damage;
         healthBar.SetHealth(health);
     }
+	
+	public int getHealth(){
+		return health;
+	}
+	
+	public void setHealth(int health){
+		this.health = health;
+	}
     
     public void recovered()
     {
@@ -118,6 +126,11 @@ public class Player : MonoBehaviour
     public void activateShield()
     {
         activeShield = true;
+    }
+	
+	public void deactivateShield()
+    {
+        activeShield = false;
     }
 
     public void activateDamage()
