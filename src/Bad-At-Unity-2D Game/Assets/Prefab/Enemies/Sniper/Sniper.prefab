@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3891745466335059584}
-  speed: 0
-  stopDist: 2.5
-  retreatDist: 1
+  speed: 1
+  stopDist: 5
+  retreatDist: 2.5
   startTimeBtwShots: 3
   FirePoint: {fileID: 6028735832534222156}
   projectile: {fileID: 1222976286999306774, guid: 586f0f16f5e392748aa208eba7ed41c2,

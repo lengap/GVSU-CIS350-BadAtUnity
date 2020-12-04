@@ -7,7 +7,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 { 
     public float time;
-    private float timeStore;
+    private float timer;
     private bool shieldActive;
 	
 	private Player player;
@@ -17,7 +17,7 @@ public class Shield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeStore = time;
+        timer = time;
         shieldActive = false;
     }
 
@@ -26,17 +26,18 @@ public class Shield : MonoBehaviour
     {
         if (shieldActive == true)
         {
-            if (time < 0)
+            if (timer < 0)
             {
 				shieldActive = false;
-				player.deactivateShield();
-                
-                time = timeStore;
+                Debug.Log("SHIELD DEACTIVATED");
+                player.deactivateShield();
+
+                timer = time;
             }
             else
             {
-				Debug.Log(time);
-                time -= Time.deltaTime;   
+				Debug.Log(timer);
+                timer -= Time.deltaTime;   
             }
         }
     }
@@ -48,6 +49,7 @@ public class Shield : MonoBehaviour
         {
             shieldActive = true;
             temp.activateShield();
+            Debug.Log("SHIELD ACTIVE");
         }
 
         Destroy(gameObject);
