@@ -15,7 +15,7 @@ public class Landmine : MonoBehaviour
         Player player = hitInfo.GetComponent<Player>();
         if(player != null)
         {
-            player.TakeDamage(50);
+            player.TakeDamage(10);
         }
 		
         Destroy(gameObject);

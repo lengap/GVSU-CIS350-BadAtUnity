@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+	
+	
+	public int health;
+	public int ammo;
    
        public void PlayGame()
     {
         //load next level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		PlayerPrefs.SetInt("PlayerCurrHealth", health);
+		PlayerPrefs.SetInt("PlayerCurrAmmo", ammo);
+        SceneManager.LoadScene("Level");
+		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level"));
     }
 
     public void QuitGame()

@@ -11,9 +11,9 @@ public class Player : MonoBehaviour
     public GameObject deathEffect;
     //variables
     //public int respawn;
-    public int battery = 100;
+    public int battery;
     public bool emptyBattery = false;
-    public int health = 100;
+    public int health;
     private int maxHealth = 100;
     public bool facingRight = true;
     private bool activeShield;
@@ -26,8 +26,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		health = PlayerPrefs.GetInt("PlayerCurrHealth");
+		battery = PlayerPrefs.GetInt("PlayerCurrAmmo");
         rb = GetComponent<Rigidbody2D>();
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(PlayerPrefs.GetInt("PlayerCurrHealth"));
         activeShield = false;
         activeDamage=false;
     }
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour
             if(!emptyBattery)
             {
                 battery-= 1;
+				PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
             } else
             {
                 checkBattery();
@@ -86,6 +89,7 @@ public class Player : MonoBehaviour
     public void incBattery()
     {
         battery = battery + 25;
+		PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
     }
 
 
@@ -95,6 +99,7 @@ public class Player : MonoBehaviour
         {
 
             health -= damage;
+			PlayerPrefs.SetInt("PlayerCurrHealth", health);
             healthBar.SetHealth(health);
             animator.SetBool("Hurt", true);
 
@@ -107,16 +112,9 @@ public class Player : MonoBehaviour
 	public void HealDamage(int damage)
     {
         health += damage;
+		PlayerPrefs.SetInt("PlayerCurrHealth", health);
         healthBar.SetHealth(health);
     }
-	
-	public int getHealth(){
-		return health;
-	}
-	
-	public void setHealth(int health){
-		this.health = health;
-	}
     
     public void recovered()
     {

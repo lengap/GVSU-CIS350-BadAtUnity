@@ -306,7 +306,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -654,85 +654,73 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="PsdPlugin">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -744,9 +732,25 @@
       <Project>{558A47BC-FE2F-6C77-5267-0551BF5769D6}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{EC47E65F-EE05-3457-96CA-65A3921FA2A9}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{20B0C424-2B5F-B8BB-23C5-17AFE120994A}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{4889CD77-59E2-8924-D9F9-9B71E2BFDC31}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{BA6267DB-96FB-CD6E-131F-6F7001C9E272}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{4B2E8435-57A8-6675-DE36-27B000C6A467}</Project>
+      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

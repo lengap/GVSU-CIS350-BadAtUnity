@@ -7,7 +7,7 @@ public class Room_Loader : MonoBehaviour
 {
 	
 	private int spnrCnt = 0;
-	private int health;
+	private HealthBar healthbar;
 	
 	
     // Start is called before the first frame update
@@ -20,14 +20,11 @@ public class Room_Loader : MonoBehaviour
     void Update()
     {
 		spnrCnt = GameObject.FindGameObjectsWithTag("Spawner").Length;
+		Debug.Log("Spawner Count " + spnrCnt);
 		
-		if(spnrCnt == 0){
-			if(SceneManager.GetActiveScene().name == "BossRoom"){
-				
-			} else {
-				SceneManager.LoadScene("BossRoom");
-				SceneManager.UnloadSceneAsync("Level");
-			}
+		if(spnrCnt == 0 && SceneManager.GetActiveScene().name == "Level"){
+			SceneManager.LoadScene("BossRoom");
+			SceneManager.UnloadScene("Level");
 		}
 		
     }
@@ -36,15 +33,12 @@ public class Room_Loader : MonoBehaviour
         Debug.Log(other.name);
         if (other.CompareTag("Player")) {
             Player player = other.GetComponent<Player>();
-			health = player.getHealth();
-			Debug.Log(health);
             if (player != null)
             {
 				if(SceneManager.GetActiveScene().name != "Level"){
 					SceneManager.LoadScene("Level");
+					SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level"));
 					SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-					
-					player.setHealth(health);
 					
 					Destroy(gameObject);
 				}
@@ -52,18 +46,18 @@ public class Room_Loader : MonoBehaviour
 					int rand = Random.Range(0,3);
 					if(rand == 0){
 						SceneManager.LoadScene("Bedroom");
+						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Bedroom"));
 						SceneManager.UnloadSceneAsync("Level");
-						player.setHealth(health);
 					}
 					if(rand == 1){
 						SceneManager.LoadScene("Office");
+						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Office"));
 						SceneManager.UnloadSceneAsync("Level");
-						player.setHealth(health);
 					}
 					if(rand == 2){
 						SceneManager.LoadScene("Library");
+						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Library"));
 						SceneManager.UnloadSceneAsync("Level");
-						player.setHealth(health);
 					}
 					
 				}
@@ -71,9 +65,5 @@ public class Room_Loader : MonoBehaviour
         }
 		
     }
-	
-	private void CheckNumSpawners(){
-		
-	}
 	
 }

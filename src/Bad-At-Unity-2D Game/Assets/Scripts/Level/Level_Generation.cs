@@ -257,7 +257,7 @@ public class Level_Generation : MonoBehaviour
 		if(Vector3.Distance(pos, PlayerTrans.position) > 15){
 			if(radius > 2 && (spnrCount != maxSpnr)){
 				Instantiate(spawner, pos, Quaternion.identity);
-				Debug.Log("Spawner Count" + GameObject.FindGameObjectsWithTag("Spawner").Length);
+				//Debug.Log("Spawner Count" + GameObject.FindGameObjectsWithTag("Spawner").Length);
 				if(Random.Range(0, 10) == 1 && ladderCnt < maxLadder){
 					Instantiate(Ladder, pos, Quaternion.identity);
 					Debug.Log("Ladder Count" + GameObject.FindGameObjectsWithTag("Portal").Length);

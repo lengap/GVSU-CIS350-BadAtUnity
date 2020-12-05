@@ -873,6 +873,16 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 968638711}
+    - target: {fileID: 4092476878747784208, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+        type: 3}
+      propertyPath: battery
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092476878747784208, guid: d49e0e237fe0e1840b764dc84aadeb7b,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4092476878747784212, guid: d49e0e237fe0e1840b764dc84aadeb7b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1169,7 +1179,7 @@ MonoBehaviour:
     type: 3}
   maxSpnr: 15
   maxItems: 25
-  maxMines: 10
+  maxMines: 5
   maxSandBags: 10
   maxLadder: 3
   spawner: {fileID: 8350173349360789797, guid: c555acd562f66614c84cf0fb640fab7a, type: 3}
@@ -2804,6 +2814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a9053b764209f4090a21d2291c7c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  ammo: 0
 --- !u!1001 &7064608402686510459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2815,6 +2827,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[1].pitch
       value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064608403723582724, guid: b00a5725de6960c45a59ae5cebffcb3b,
+        type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064608403723582724, guid: b00a5725de6960c45a59ae5cebffcb3b,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7064608403723582725, guid: b00a5725de6960c45a59ae5cebffcb3b,
         type: 3}
