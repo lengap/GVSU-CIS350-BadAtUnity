@@ -252,10 +252,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Pathfinding.Ionic.Zip.Reduced">
- <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -611,25 +611,23 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/hchop/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{FE5263C5-AD9E-65E2-E1EB-E7847E409120}</Project>
       <Name>AstarPathfindingProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{4B2E8435-57A8-6675-DE36-27B000C6A467}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{EC47E65F-EE05-3457-96CA-65A3921FA2A9}</Project>
-      <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

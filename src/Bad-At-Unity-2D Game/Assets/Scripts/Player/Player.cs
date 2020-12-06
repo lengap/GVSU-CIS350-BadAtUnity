@@ -13,8 +13,10 @@ public class Player : MonoBehaviour
     //public int respawn;
     public int battery;
     public bool emptyBattery = false;
+    public ammoBar ammoBar;
     public int health;
     private int maxHealth = 100;
+    
     public bool facingRight = true;
     private bool activeShield;
     private bool activeDamage;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour
     {
 		health = PlayerPrefs.GetInt("PlayerCurrHealth");
 		battery = PlayerPrefs.GetInt("PlayerCurrAmmo");
+        ammoBar.SetMaxAmmo(PlayerPrefs.GetInt("PlayerCurrAmmo"));
         rb = GetComponent<Rigidbody2D>();
         healthBar.SetMaxHealth(PlayerPrefs.GetInt("PlayerCurrHealth"));
         activeShield = false;
@@ -64,6 +67,7 @@ public class Player : MonoBehaviour
             {
                 battery-= 1;
 				PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
+                ammoBar.SetAmmo(battery);
             } else
             {
                 checkBattery();
@@ -90,6 +94,7 @@ public class Player : MonoBehaviour
     {
         battery = battery + 25;
 		PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
+        ammoBar.SetAmmo(battery);
     }
 
 
