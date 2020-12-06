@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     //variables
     //public int respawn;
     public int battery;
-    public bool emptyBattery = false;
+	public bool canShoot = true;
     public ammoBar ammoBar;
     public int health;
     private int maxHealth = 100;
@@ -61,17 +61,18 @@ public class Player : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && canShoot)
         {
-            if(!emptyBattery)
+            if(battery > 0)
             {
-                battery-= 1;
+                battery -= 1;
 				PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
                 ammoBar.SetAmmo(battery);
-            } else
-            {
-                checkBattery();
-            }
+            } 
+			else
+			{
+				canShoot = false;
+			}
         }
     }
 
@@ -80,19 +81,10 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    public void checkBattery()
-    {
-        if(battery > 1) 
-        {
-            emptyBattery = false;
-        } else
-        {
-            emptyBattery = true;
-        }
-    }
     public void incBattery()
     {
         battery = battery + 25;
+		canShoot = true;
 		PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
         ammoBar.SetAmmo(battery);
     }
@@ -110,7 +102,7 @@ public class Player : MonoBehaviour
 
             if (health <= 0)
             {
-                Die();
+                //Die();
             }
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Level_Generation : MonoBehaviour
 {
@@ -96,6 +97,8 @@ public class Level_Generation : MonoBehaviour
 
     private void Start()
     {
+		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level"));
+		Debug.Log(SceneManager.GetActiveScene().name);
         int x = 0;
         int y = 0;
         int routeLength = 0;

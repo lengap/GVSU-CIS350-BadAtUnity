@@ -9,14 +9,19 @@ public class MainMenu : MonoBehaviour
 	
 	public int health;
 	public int ammo;
-   
-       public void PlayGame()
+	
+	public void Start(){
+		
+	}
+    
+	
+	public void PlayGame()
     {
         //load next level
 		PlayerPrefs.SetInt("PlayerCurrHealth", health);
 		PlayerPrefs.SetInt("PlayerCurrAmmo", ammo);
         SceneManager.LoadScene("Level");
-		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level"));
+		Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()

@@ -7,7 +7,7 @@ public class Room_Loader : MonoBehaviour
 {
 	
 	private int spnrCnt = 0;
-	private HealthBar healthbar;
+	private bool OnBoss = true;
 	
 	
     // Start is called before the first frame update
@@ -21,10 +21,10 @@ public class Room_Loader : MonoBehaviour
     {
 		spnrCnt = GameObject.FindGameObjectsWithTag("Spawner").Length;
 		Debug.Log("Spawner Count " + spnrCnt);
+		Debug.Log("OnBoss " + OnBoss);
 		
-		if(spnrCnt == 0 && SceneManager.GetActiveScene().name == "Level"){
+		if(spnrCnt == 0 && OnBoss){
 			SceneManager.LoadScene("BossRoom");
-			SceneManager.UnloadScene("Level");
 		}
 		
     }
@@ -37,8 +37,8 @@ public class Room_Loader : MonoBehaviour
             {
 				if(SceneManager.GetActiveScene().name != "Level"){
 					SceneManager.LoadScene("Level");
-					SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level"));
-					SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+					Debug.Log(SceneManager.GetActiveScene().name);
+					OnBoss = true;
 					
 					Destroy(gameObject);
 				}
@@ -46,18 +46,18 @@ public class Room_Loader : MonoBehaviour
 					int rand = Random.Range(0,3);
 					if(rand == 0){
 						SceneManager.LoadScene("Bedroom");
-						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Bedroom"));
-						SceneManager.UnloadSceneAsync("Level");
+						Debug.Log(SceneManager.GetActiveScene().name);
+						OnBoss = false;
 					}
 					if(rand == 1){
 						SceneManager.LoadScene("Office");
-						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Office"));
-						SceneManager.UnloadSceneAsync("Level");
+						Debug.Log(SceneManager.GetActiveScene().name);
+						OnBoss = false;
 					}
 					if(rand == 2){
 						SceneManager.LoadScene("Library");
-						SceneManager.SetActiveScene(SceneManager.GetSceneByName("Library"));
-						SceneManager.UnloadSceneAsync("Level");
+						Debug.Log(SceneManager.GetActiveScene().name);
+						OnBoss = false;
 					}
 					
 				}
