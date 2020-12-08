@@ -31,7 +31,7 @@ public class Shield : MonoBehaviour
 				shieldActive = false;
                 Debug.Log("SHIELD DEACTIVATED");
                 player.deactivateShield();
-
+                Destroy(gameObject);
                 timer = time;
             }
             else
@@ -52,6 +52,7 @@ public class Shield : MonoBehaviour
             Debug.Log("SHIELD ACTIVE");
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 }

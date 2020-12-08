@@ -51,8 +51,8 @@ public class ShotgunEnemyAI : MonoBehaviour
 
         if (timeBtwShots <= 0)
         {
-            
 
+            FindObjectOfType<AudioManager>().Play("ShotgunShoot");
             Instantiate(projectile1, FirePoint.position, Quaternion.identity);
             Instantiate(projectile2, FirePoint.position, Quaternion.identity);
             Instantiate(projectile3, FirePoint.position, Quaternion.identity);

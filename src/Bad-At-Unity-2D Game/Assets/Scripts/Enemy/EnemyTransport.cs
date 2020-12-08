@@ -18,6 +18,7 @@ public class EnemyTransport : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     public Transform FirePoint;
+    public Transform SpawnPoint;
 
     public GameObject projectile;
     public GameObject deathEffect;
@@ -28,12 +29,19 @@ public class EnemyTransport : MonoBehaviour
     private float vertical;
 
 
+    public GameObject[] EnemyType;
+    private float timeBtwSpawns;
+    private int enemyCnt = 0;
+    public float startTimeBtwSpawns;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        timeBtwSpawns = startTimeBtwSpawns;
     }
 
     // Update is called once per frame
@@ -57,6 +65,20 @@ public class EnemyTransport : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
             animator.SetBool("IsMoving", true);
         }
+
+        if ((Vector2.Distance(transform.position, player.position) <= playerDistance))
+        {
+            if (timeBtwSpawns <= 0)
+            {
+                Instantiate(EnemyType[Random.Range(0, 2)], SpawnPoint.position, Quaternion.identity);
+                Debug.Log(enemyCnt);
+                timeBtwSpawns = startTimeBtwSpawns;
+            }
+            else
+            {
+                timeBtwSpawns -= Time.deltaTime;
+            }
+        }
         /*
         if (horizontal > 0 && !facingRight)
         {
@@ -70,7 +92,7 @@ public class EnemyTransport : MonoBehaviour
 
         if (timeBtwShots <= 0)
         {
-
+            FindObjectOfType<AudioManager>().Play("RobotShoot");
             Instantiate(projectile, FirePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
 

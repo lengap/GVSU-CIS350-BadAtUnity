@@ -46,13 +46,37 @@ MonoBehaviour:
   sounds:
   - name: PlayerShoot
     clip: {fileID: 8300000, guid: be64544bade297e4d872dd74c66256d2, type: 3}
-    volume: 0.647
-    pitch: 0
+    volume: 0.034
+    pitch: 1.4
     source: {fileID: 0}
     loop: 0
   - name: EnemyShoot
     clip: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
-    volume: 0.711
-    pitch: 0.1
+    volume: 0.024
+    pitch: 1.24
     source: {fileID: 0}
     loop: 0
+  - name: Background Music
+    clip: {fileID: 8300000, guid: 6e3cd167617d0b64bb986df111677db3, type: 3}
+    volume: 0.138
+    pitch: 1.4
+    source: {fileID: 0}
+    loop: 1
+  - name: SniperShoot
+    clip: {fileID: 8300000, guid: fecc3e7a0166a104cb810435f6fdf37b, type: 3}
+    volume: 0.024
+    pitch: 1.4
+    source: {fileID: 0}
+    loop: 1
+  - name: ShotgunShoot
+    clip: {fileID: 8300000, guid: 6349a640dc07c3b4389c205f5b5a5145, type: 3}
+    volume: 0.024
+    pitch: 1.4
+    source: {fileID: 0}
+    loop: 1
+  - name: RobotShoot
+    clip: {fileID: 8300000, guid: 79ee7751ab191f548b7f3232381afa0a, type: 3}
+    volume: 0.024
+    pitch: 1.4
+    source: {fileID: 0}
+    loop: 1

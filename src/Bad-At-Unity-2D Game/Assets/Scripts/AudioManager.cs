@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    
 
     //runs before start, loads each sound in sound manager
     void Awake()
@@ -48,12 +49,12 @@ public class AudioManager : MonoBehaviour
                 s.source.loop = s.loop;
             }   
     }
-    /* theme music will play through audio manager on loop (we need music first)
+ // theme music will play through audio manager on loop (we need music first)
     void Start()
     {
-        Play("Theme");
+        Play("Background Music");
     }
-    */
+    
 
 //looks for sound with matching name and plays that sound
 public void Play (string name)
