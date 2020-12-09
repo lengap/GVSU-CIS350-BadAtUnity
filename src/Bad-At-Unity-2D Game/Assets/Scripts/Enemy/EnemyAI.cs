@@ -16,6 +16,9 @@ public class EnemyAI : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     public Transform FirePoint;
+    public bool facingRight = false;
+    public float prevPositionX;
+
 
     public GameObject projectile;
     public GameObject deathEffect;
@@ -35,6 +38,15 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((player.transform.position.x > gameObject.transform.position.x)&& !facingRight)
+        {
+            Flip();
+        }
+        if ((player.transform.position.x < gameObject.transform.position.x) && facingRight)
+        {
+            Flip();
+        }
+
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -62,8 +74,16 @@ public class EnemyAI : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
 
+    }
 
+    
 
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 tmpScale = gameObject.transform.localScale;
+        tmpScale.x *= -1;
+        gameObject.transform.localScale = tmpScale;
     }
 
     public void TakeDamage( int damage)

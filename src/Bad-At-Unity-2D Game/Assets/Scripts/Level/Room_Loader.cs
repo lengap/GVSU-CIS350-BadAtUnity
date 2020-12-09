@@ -45,19 +45,22 @@ public class Room_Loader : MonoBehaviour
 				else if (SceneManager.GetActiveScene().name == "Level"){
 					int rand = Random.Range(0,3);
 					if(rand == 0){
+						OnBoss = false;
 						SceneManager.LoadScene("Bedroom");
 						Debug.Log(SceneManager.GetActiveScene().name);
-						OnBoss = false;
+						
 					}
 					if(rand == 1){
+						OnBoss = false;
 						SceneManager.LoadScene("Office");
 						Debug.Log(SceneManager.GetActiveScene().name);
-						OnBoss = false;
+						
 					}
 					if(rand == 2){
+						OnBoss = false;
 						SceneManager.LoadScene("Library");
 						Debug.Log(SceneManager.GetActiveScene().name);
-						OnBoss = false;
+						
 					}
 					
 				}

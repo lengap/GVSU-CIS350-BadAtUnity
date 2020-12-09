@@ -16,6 +16,7 @@ public class SniperAI : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
     public Transform FirePoint;
+    public bool facingRight = false;
 
     public GameObject projectile;
     public GameObject deathEffect;
@@ -33,6 +34,14 @@ public class SniperAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((player.transform.position.x > gameObject.transform.position.x) && !facingRight)
+        {
+            Flip();
+        }
+        if ((player.transform.position.x < gameObject.transform.position.x) && facingRight)
+        {
+            Flip();
+        }
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -62,6 +71,14 @@ public class SniperAI : MonoBehaviour
 
 
 
+    }
+
+    public void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 tmpScale = gameObject.transform.localScale;
+        tmpScale.x *= -1;
+        gameObject.transform.localScale = tmpScale;
     }
 
     public void TakeDamage( int damage)

@@ -20,6 +20,7 @@ public class EnemyTransport : MonoBehaviour
     public Transform FirePoint;
     public Transform SpawnPoint;
 
+
     public GameObject projectile;
     public GameObject deathEffect;
     public Animator animator;
@@ -47,9 +48,14 @@ public class EnemyTransport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-
+        if ((player.transform.position.x > gameObject.transform.position.x) && !facingRight)
+        {
+            Flip();
+        }
+        if ((player.transform.position.x < gameObject.transform.position.x) && facingRight)
+        {
+            Flip();
+        }
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -79,20 +85,11 @@ public class EnemyTransport : MonoBehaviour
                 timeBtwSpawns -= Time.deltaTime;
             }
         }
-        /*
-        if (horizontal > 0 && !facingRight)
-        {
-            Flip();
-        }
-
-        else if (horizontal < 0 && facingRight)
-        {
-            Flip();
-        }*/
+        
 
         if (timeBtwShots <= 0)
         {
-            FindObjectOfType<AudioManager>().Play("RobotShoot");
+           // FindObjectOfType<AudioManager>().Play("RobotShoot");
             Instantiate(projectile, FirePoint.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
 
@@ -102,13 +99,14 @@ public class EnemyTransport : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-    /*
-    private void Flip()
+    
+    public void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        Vector3 tmpScale = gameObject.transform.localScale;
+        tmpScale.x *= -1;
+        gameObject.transform.localScale = tmpScale;
     }
-    */
     public void TakeDamage(int damage) {
         health -= damage;
         if (health <= 0) {
