@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
         //load next level
 		PlayerPrefs.SetInt("PlayerCurrHealth", health);
 		PlayerPrefs.SetInt("PlayerCurrAmmo", ammo);
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadSceneAsync("Level");
 		Debug.Log(SceneManager.GetActiveScene().name);
     }
 

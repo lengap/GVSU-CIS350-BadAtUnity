@@ -23,13 +23,14 @@ public class Room_Loader : MonoBehaviour
 		Debug.Log("Spawner Count " + spnrCnt);
 		Debug.Log("OnBoss " + OnBoss);
 		
-		if(spnrCnt == 0 && OnBoss){
+		if(spnrCnt == 0 && SceneManager.GetActiveScene().name == "Level"){
 			SceneManager.LoadScene("BossRoom");
 		}
 		
     }
 	
 	void OnTriggerEnter2D(Collider2D other) {
+		OnBoss = false;
         Debug.Log(other.name);
         if (other.CompareTag("Player")) {
             Player player = other.GetComponent<Player>();

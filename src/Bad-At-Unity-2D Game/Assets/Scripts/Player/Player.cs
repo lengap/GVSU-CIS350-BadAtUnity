@@ -61,17 +61,19 @@ public class Player : MonoBehaviour
 
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
 
-        if(Input.GetButtonDown("Fire1") && canShoot)
-        {
-            if(battery > 0)
-            {
-                battery -= 1;
-				PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
-                ammoBar.SetAmmo(battery);
-            } 
-			else
+		if(battery > 0){
+			if(Input.GetButtonDown("Fire1") && canShoot)
 			{
-				canShoot = false;
+				if(battery > 0)
+				{
+					battery -= 1;
+					PlayerPrefs.SetInt("PlayerCurrAmmo", battery);
+					ammoBar.SetAmmo(battery);
+				} 
+				else
+				{
+					canShoot = false;
+				}
 			}
         }
     }
@@ -102,7 +104,7 @@ public class Player : MonoBehaviour
 
             if (health <= 0)
             {
-                //Die();
+                SceneManager.LoadScene("Loss");
             }
         }
     }
@@ -140,12 +142,5 @@ public class Player : MonoBehaviour
             activeDamage = false;
         }
         
-    }
-
-    void Die()
-    {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        SceneManager.LoadScene("Level");
     }
 }

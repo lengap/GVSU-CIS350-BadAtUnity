@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossRoom.unity
     guid: ef7f55529a5878a4ca2bcf152afff1cc
+  - enabled: 1
+    path: Assets/Scenes/Loss.unity
+    guid: e774fa2cc8de21e488c7e2bbcfedec0d
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: f94d19e05370d204a948ea65434164ce
   m_configObjects: {}

@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
         //Player player = other.GetComponent<Player>();
 
         //Can change fire input in "Project input settings"
-        if (Input.GetButtonDown("Fire1"))//&& player.emptyBattery
+        if (Input.GetButtonDown("Fire1") && player.canShoot == true)//&& player.emptyBattery
         {
             Shoot();
             animator.SetBool("Shooting", true);
