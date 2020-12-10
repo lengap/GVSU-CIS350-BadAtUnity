@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8350173349360789802}
   - component: {fileID: 8350173349360789803}
   - component: {fileID: 8242568159240764364}
-  - component: {fileID: -4759968621068575842}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Spawner
@@ -134,21 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7015611, y: 0.37514448}
   m_EdgeRadius: 0
---- !u!111 &-4759968621068575842
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350173349360789797}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 781920daece0e7044afec9dd39a40784, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &8350173349845703406
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +225,7 @@ Animator:
   m_GameObject: {fileID: 8350173349845703406}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2edf743f4e9f2f5498460dfc45b093ec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
