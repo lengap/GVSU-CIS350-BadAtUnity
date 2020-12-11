@@ -11,6 +11,6 @@ We will instead place the character in a more modern setting to better connect w
 ## Prerequisites
 
 ## Run Instructions
-To run "Roberta The Eliminator" on Windows locate and download the zip file named "Roberta The Eliminator_v1.0.2". Once downloaded, run the .exe file named "RobertaTheEliminator.exe".
+To run "Roberta The Eliminator" on Windows, locate and download the zip file named "Roberta The Eliminator_v1.0.2". Once downloaded, run the .exe file named "RobertaTheEliminator.exe".
 
 
