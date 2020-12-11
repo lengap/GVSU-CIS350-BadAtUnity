@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 49, y: 0}
+  m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: -338.86633, y: -161.35118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &329766315
@@ -331,7 +331,7 @@ MonoBehaviour:
 
     S- Down
 
-    D- Down
+    D- RIght
 
     Space- Shoot
 
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2294,7 +2294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20.638, y: 149}
+  m_AnchoredPosition: {x: -2, y: 149}
   m_SizeDelta: {x: -395.59006, y: -314.62823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361585937
@@ -2653,7 +2653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000005722, y: -165.69}
+  m_AnchoredPosition: {x: -4, y: -165.69}
   m_SizeDelta: {x: 77.43298, y: 41.57245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1519301965
@@ -3019,7 +3019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  ammo: 100
+  ammo: 250
 --- !u!1 &1631599771
 GameObject:
   m_ObjectHideFlags: 0
