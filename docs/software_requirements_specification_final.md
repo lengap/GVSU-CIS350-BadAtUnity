@@ -88,10 +88,10 @@ This section provides test cases for the game. This section contains unit tests,
 | TC5 | When hit with a projectile the players health decreases. | Get hit with projectile | N/A | Player health decreases | Player's health decreased | Pass | FR2 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC6 | When picking up a damage powerup the players damage increases | Pick up damage powerup | N/A | Damage variable increases | Damage Increases | Fail | FR14 |
+| TC6 | When picking up a damage powerup the players damage increases | Pick up damage powerup (Pink) | N/A | Damage variable increases | Damage Increases | Fail | FR14 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC7 | When picking up a shield powerup the player health will not decrease | Pick up shield powerup | N/A | Health variable does not change | Health remained the same | Fail | FR15 |
+| TC7 | When picking up a shield powerup the player health will not decrease | Pick up shield powerup (Blue) | N/A | Health variable does not change | Health remained the same | Fail | FR15 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
 | TC8 | When picking up a battery the player's ammo will increase | Pick up battery | N/A | ammo variable increases | battery variable increased | Pass | FR13 |
@@ -100,21 +100,21 @@ This section provides test cases for the game. This section contains unit tests,
 | TC9 | When picking up a health kit the player health will increase | Pick up health kit | N/A | Health variable increases | Health variable increased | Pass | FR12 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC10 | When pressing spacebar the player's ammo will drain | Press spacebar | Hit Spacebar | Player's ammo will decrease by 1 | Player's ammo decreases | Pass | FR1 |
+| TC10 | When pressing spacebar the player's ammo will drain | User presses spacebar | User presses Spacebar | Player's ammo will decrease by 1 | Player's ammo decreases | Pass | FR1 |
 
 ## Integration Tests
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC11 | When pressing spacebar the player will spawn a bullet | Press spacebar | N/A | Bullet will spawn | Bullet spawned | Pass | FR1 |
+| TC11 | When pressing spacebar the player will spawn a bullet | User presses spacebar | User presses Spacebar | Bullet will spawn | Bullet spawned | Pass | FR1 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC12 | Enemy Spawners will be placed in the map on load | Load the game | N/A | Spawners will be placed on the map | Spawners are on map | Pass | FR7 |
+| TC12 | Enemy Spawners will be placed in the map on load | User plays the game and locates enemy spawners | N/A | Spawners will be placed on the map | Spawners are on map | Pass | FR7 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC13 | Powerups will be placed inside the map on load | Load the game | N/A | Powerups will be visible on the map | Powerups on map | Pass | FR8 |
+| TC13 | Powerups will be placed inside the map on load | User plays the game and locates powerups | N/A | Powerups will be visible on the map | Powerups on map | Pass | FR8 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC14 | When pressing spacebar the battery UI image will drain | Press spacebar | Hit Spacebar | Battery UI Shrinks | Battery UI Shrank | Pass | FR1 |
+| TC14 | When pressing spacebar the battery UI image will drain | User presses spacebar | User presses Spacebar | Battery UI Shrinks | Battery UI Shrank | Pass | FR1 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
 | TC15 | When the player takes damage the health bar drains | Game is running, enemies on screen, and player takes damage | N/A | Health bar will drain when taking damage. | Player's Health bar drains | Pass | FR2 |
@@ -134,7 +134,7 @@ This section provides test cases for the game. This section contains unit tests,
 | TC19 | No elements within the game will spawn outside the game bounds | Check around game bounds for items outside the map. | N/A | No elements will spawn outside the map | No elements spawn outside the map | Pass | NFR10 |
 | ID  | Description | Steps | Input Values | Expected Output | Actual Output | Pass/Fail | Requirement Link |
 | :-------------: | :----------: | :----------: | :----------: | :----------: |:----------: | :----------: | :----------: |
-| TC20 | UI is present within the game, and changes when appropriate. | Play the game, if user loses show gameover screen, if player wins show winner screen | N/A | UI will appear and change | UI Appears and changes | Pass | NFR4 |
+| TC20 | UI is present within the game, and changes when appropriate. | Play the game, if the user loses show gameover screen or if the user wins show winner screen | N/A | UI will appear and change | UI Appears and changes | Pass | NFR4 |
 
 # Software Artifacts
 The purpose of this section is to provide an easy way to locate the artifacts associated with our game. Artifacts include Use Case Diagrams, Use Case Description.
