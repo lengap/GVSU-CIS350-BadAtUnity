@@ -85,7 +85,7 @@ MonoBehaviour:
   - {fileID: 1297160699926294168, guid: e94a90ed531b2dc49975325e0a4737b9, type: 3}
   - {fileID: 1297160699926294168, guid: f9eeeca660ac9944caf7c5cf9dadb15e, type: 3}
   - {fileID: 1297160699926294168, guid: 632ecc73fd3e0aa4cb7584a8cadbd248, type: 3}
-  startTimeBtwSpawns: 15
+  startTimeBtwSpawns: 8
 --- !u!50 &8350173349360789803
 Rigidbody2D:
   serializedVersion: 4

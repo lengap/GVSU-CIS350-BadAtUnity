@@ -3535,7 +3535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.700012, y: -7}
+  m_AnchoredPosition: {x: -34, y: -7}
   m_SizeDelta: {x: -151.4479, y: -161.35118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872577294
@@ -3557,9 +3557,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Meet "Roberta The Eliminator" who was placed 2000 years into the future.
-    Upon arrival she was commanded to fight the invading army of "New Korea". With
-    her gun in her hand, she must battle to get back to her original timeline.
+  m_text: "Meet \"Roberta The Eliminator\" who was placed 2000 years into the future.
+    Upon arrival she was commanded to fight the invading army of \"New Korea\". She
+    must battle to get back to her original timeline. \n(Objective: Destroy all enemy
+    spawners)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3594,7 +3595,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3623,7 +3624,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 1.39505, z: 4.1054688, w: 0}
+  m_margin: {x: 0, y: 1.39505, z: -74.24237, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
