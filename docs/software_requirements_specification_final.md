@@ -139,9 +139,12 @@ This section provides test cases for the game. This section contains unit tests,
 # Software Artifacts
 The purpose of this section is to provide an easy way to locate the artifacts associated with our game. Artifacts include Use Case Diagrams, Use Case Description.
 
-*[https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/PlayerMovement.pdf](PlayerMovementUseCase.pdf)
-*[https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/PlayerShootingUseCase.pdf](PlayerShootingUseCase.pdf)
-*[https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/SpawnEnemyUseCase.pdf](SpawnEnemyUseCase.pdf)
-*[https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/shootingDescription.md](Shooting Use Case Desc)
+* [https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/PlayerMovement.pdf](PlayerMovementUseCase.pdf)
+
+* [https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/PlayerShootingUseCase.pdf](PlayerShootingUseCase.pdf)
+
+* [https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/SpawnEnemyUseCase.pdf](SpawnEnemyUseCase.pdf)
+
+* [https://github.com/lengap/GVSU-CIS350-BadAtUnity/blob/master/artifacts/use_case_diagrams/shootingDescription.md](Shooting Use Case Desc)
 
 
