@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+//shotgun powerup
 public class Shotgun : MonoBehaviour
 { 
     public float time;
@@ -37,6 +37,7 @@ public class Shotgun : MonoBehaviour
         }
     }
 
+    //if player pickups shotgun, activate powerup
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Player player = hitInfo.GetComponent<Player>();

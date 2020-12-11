@@ -4,13 +4,15 @@ using UnityEngine;
 using Pathfinding;
 using System.Security.Cryptography;
 
+//Class handles graphics for the enemy object
 public class EnemyGFX : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //AI pathing
     public AIPath aiPath;
 
 
     // Update is called once per frame
+    //update method makes enemy animation follow position of enemy objet
     void Update()
     {
         if (aiPath.desiredVelocity.x >= 0.01f)

@@ -103,6 +103,7 @@ public class KamikazeAI : MonoBehaviour
         }
     }
 
+    //decrases health based on damage amount
     public void TakeDamage( int damage)
     {
         health -= damage;
@@ -113,6 +114,7 @@ public class KamikazeAI : MonoBehaviour
         }
     }
 
+    //if object is dead, destroy game object
     void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);

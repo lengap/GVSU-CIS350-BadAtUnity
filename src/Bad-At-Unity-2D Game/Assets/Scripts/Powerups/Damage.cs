@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+//script for damage powerup
 public class Damage : MonoBehaviour
 { 
     public float time;
@@ -23,6 +23,7 @@ public class Damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if powerup is active, increase damage and start timer
         if (damageActive == true)
         {
 
@@ -40,6 +41,7 @@ public class Damage : MonoBehaviour
         }
     }
 
+    //if player picks up powerup, activiate powerup
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Player player = hitInfo.GetComponent<Player>();

@@ -24,6 +24,7 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if shield active (picked up shield) then start timer, and deactivate player damage
         if (shieldActive == true)
         {
             if (timer < 0)
@@ -42,6 +43,7 @@ public class Shield : MonoBehaviour
         }
     }
 
+    //if player picks up shield, activate powerup
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Player temp = hitInfo.GetComponent<Player>();

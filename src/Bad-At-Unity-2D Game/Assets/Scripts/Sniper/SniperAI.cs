@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 
+//controls AI for sniper enemy
 public class SniperAI : MonoBehaviour
 {
     public Animator animator;
@@ -25,6 +26,7 @@ public class SniperAI : MonoBehaviour
 
 
     // Start is called before the first frame update
+    //finds player position
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -34,6 +36,7 @@ public class SniperAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //contols direction enemy faces
         if ((player.transform.position.x > gameObject.transform.position.x) && !facingRight)
         {
             Flip();
@@ -42,21 +45,27 @@ public class SniperAI : MonoBehaviour
         {
             Flip();
         }
+
+        //if enemy further than stop distance, move towards player
         if (Vector2.Distance(transform.position, player.position) > stopDist)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             animator.SetBool("isRunning", true);
         }
+        //if closer than stop distance and further than retreat distance, stop  moving
+
         else if (Vector2.Distance(transform.position, player.position) < stopDist && Vector2.Distance(transform.position, player.position) > retreatDist)
         {
             transform.position = this.transform.position;
             animator.SetBool("isRunning", false);
         }
+        //if within retreat distance, move away from player
+
         else if (Vector2.Distance(transform.position, player.position) < retreatDist) {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
             animator.SetBool("isRunning", true);
         }
-
+        //if time to shoot, then shoot
         if (timeBtwShots <= 0)
         {
             //shoot
@@ -73,6 +82,7 @@ public class SniperAI : MonoBehaviour
 
     }
 
+    //flips direction enemy faces 
     public void Flip()
     {
         facingRight = !facingRight;
@@ -81,16 +91,19 @@ public class SniperAI : MonoBehaviour
         gameObject.transform.localScale = tmpScale;
     }
 
+    //decreases health based on damage parameter
     public void TakeDamage( int damage)
     {
         health -= damage;
 
+        //if health is below zero enemy dies
         if(health <= 0)
         {
             Die();
         }
     }
 
+    //destroys game object
     void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);

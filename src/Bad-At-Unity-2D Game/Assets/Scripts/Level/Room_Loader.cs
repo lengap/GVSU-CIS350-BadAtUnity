@@ -29,6 +29,7 @@ public class Room_Loader : MonoBehaviour
 		
     }
 	
+    //if player runs into ladder, change the game scene
 	void OnTriggerEnter2D(Collider2D other) {
 		OnBoss = false;
         Debug.Log(other.name);

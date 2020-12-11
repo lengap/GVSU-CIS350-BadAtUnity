@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Weapon is class that allows player to shoot
+//weapon is instantiated with player and handles shooting logic
 public class Weapon : MonoBehaviour
 {
     public Transform FirePoint; //This is where the bullet is created
@@ -16,6 +18,7 @@ public class Weapon : MonoBehaviour
 
     // Update is called once per frame
 
+    //weapon is instantiated with regular properties
     void Start()
     {
         activeShotgun = false;
@@ -26,8 +29,10 @@ public class Weapon : MonoBehaviour
         //Player player = other.GetComponent<Player>();
 
         //Can change fire input in "Project input settings"
+        //If player is able to shoot, and if pressed the "fire1"/Spacebar, then shoot
         if (Input.GetButtonDown("Fire1") && player.canShoot == true)//&& player.emptyBattery
         {
+            //if conditions, then fire weapon
             Shoot();
             animator.SetBool("Shooting", true);
             FindObjectOfType<AudioManager>().Play("PlayerShoot");
@@ -39,6 +44,7 @@ public class Weapon : MonoBehaviour
         
     }
 
+    //function is called when player is shooting.  Instatiates bullets based on if powerup is equipped or not
     void Shoot()
     {
         //shooting logic

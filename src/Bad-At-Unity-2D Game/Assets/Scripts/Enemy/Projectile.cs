@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
 
+//enemy projectile is what the enemy fires
 public class Projectile : MonoBehaviour {
 
     public float speed;
@@ -14,6 +15,7 @@ public class Projectile : MonoBehaviour {
     private Vector2 target;
 
     // Start is called before the first frame update
+    //when bullet is instantiated (enemy shoots) it finds the player game object and moves towards it's position
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -31,10 +33,13 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    //When bullet impacts collider/another game object
     void OnTriggerEnter2D(Collider2D other) {
         
+        //create impact effect
         Instantiate(impactEffect, transform.position, transform.rotation);
 
+        //damage player if hit
         Debug.Log(other.name);
         if (other.CompareTag("Player")) {
             DestroyProjectile();
@@ -47,6 +52,7 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    //Function called to destroy projectile after impact is made
     void DestroyProjectile() {
         Destroy(gameObject);
     }

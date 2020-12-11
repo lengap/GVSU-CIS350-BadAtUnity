@@ -118,6 +118,7 @@ public class Level_Generation : MonoBehaviour
         FillWalls();
     }
 
+    //fills walls with  positions
     private void FillWalls()
     {
         BoundsInt bounds = groundMap.cellBounds;
@@ -165,7 +166,7 @@ public class Level_Generation : MonoBehaviour
         }
     }
 	
-
+    //creates new level route (halls, rooms, etc)
     private void NewRoute(int x, int y, int routeLength, Vector2Int previousPos)
     {
         if (routeCount < maxRoutes)
@@ -245,6 +246,7 @@ public class Level_Generation : MonoBehaviour
         }
     }
 
+    //generates each game square based on radius
     private void GenerateSquare(int x, int y, int radius)
     {
         for (int tileX = x - radius; tileX <= x + radius; tileX++)
@@ -271,6 +273,7 @@ public class Level_Generation : MonoBehaviour
 		
     }
 	
+    //randomly generates items throughout the level
 	private void GenerateItems(int x, int y){
 		Vector3Int pos = new Vector3Int(x,y,-2);
 		int chooseItem = Random.Range(0,2);
@@ -281,6 +284,7 @@ public class Level_Generation : MonoBehaviour
 		
 	}
 	
+    //generates landmones throughout the level
 	private void GenerateLandmines(int x, int y){
 		Vector3Int pos = new Vector3Int(x,y,-2);
 		if(landmineCount != maxMines){
@@ -288,6 +292,8 @@ public class Level_Generation : MonoBehaviour
 			landmineCount++;
 		}
 	}
+
+    /*not implemented
 	private void GenerateSandbags(int x, int y){
 		Vector3Int pos = new Vector3Int(x,y,-2);
 		if(SandbagCnt != maxSandBags){
@@ -295,4 +301,5 @@ public class Level_Generation : MonoBehaviour
 			SandbagCnt++;
 		}
 	}
+    */
 }
