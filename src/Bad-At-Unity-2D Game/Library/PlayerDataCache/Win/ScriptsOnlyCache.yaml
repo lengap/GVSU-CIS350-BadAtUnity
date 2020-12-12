@@ -1749,4 +1749,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/BossRoom.unity
   - Assets/Scenes/Loss.unity
   - Assets/Scenes/Victory.unity
-  playerPath: C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Builds/Windows/x86/Roberta_The_Eliminator_v1.0.3/RobertaTheEliminator.exe
+  playerPath: C:/Users/casle/GVSU-CIS350-BadAtUnity/src/Bad-At-Unity-2D Game/Builds/Windows/x86/Roberta_The_Eliminator_v1.0.4/RobertaTheEliminator.exe

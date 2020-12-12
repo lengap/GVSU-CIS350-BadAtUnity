@@ -4,11 +4,11 @@
 # Overview
 This document provides a layout of our specific features for our game. Providing a subsection of each feature containing the functional and non-functional requirements.
 
-#Software Requirements
+# Software Requirements
 This section provides a list of functional and non-functional requirements included within the game. The functional requirements provide what each requirement does to its specific category. The non-functional requirements provide
 how the game runs and performs a specific action.
 
-#Functional Requirements
+# Functional Requirements
 
 ### Player
 | ID | Requirement     | Test Cases |
@@ -37,7 +37,7 @@ how the game runs and performs a specific action.
 | FR14 | The player's damage shall increase when picking up a damage powerup. | TC6 |
 | FR15 | The player shall have a shield when picking up the shield powerup. | TC7 |
 
-#Non-Functional Requirements
+# Non-Functional Requirements
 
 ### Functionality
 | ID | Requirement     | Test Cases |
